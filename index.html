@@ -639,3 +639,248 @@ footer{background:#052e21;color:#dcebe4;text-align:center;padding:22px}
   </script>
 </body>
 </html>
+// Dynamic 15,000 Products Generation Script
+const categories = ["Grocery", "Electronics", "Personal Care", "Food", "Household"];
+const sampleProducts = [
+  "Cheesy Pizza", "Zinger Burger", "Wireless Headphones", "Smart Watch", 
+  "Basmati Rice 5kg", "Cooking Oil 1L", "Beauty Soap", "Shampoo 200ml", 
+  "Crispy Chips", "Cold Drink 1.5L", "Toothpaste", "Washing Powder"
+];
+
+const bigProductList = [];
+
+// Loop to generate 15,000 unique items
+for (let i = 1; i <= 15000; i++) {
+  const randomName = sampleProducts[i % sampleProducts.length];
+  const randomCat = categories[i % categories.length];
+  const randomPrice = Math.floor(Math.random() * 2000) + 50;
+
+  bigProductList.push({
+    id: i,
+    name: `${randomName} - Batch #${i}`,
+    category: randomCat,
+    price: `Rs. ${randomPrice}`,
+    image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=400"
+  });
+}
+
+console.log("15,000 Products Loaded Successfully!", bigProductList);
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ZEE-MART | Complete Supermarket & Fashion Store</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    body { background-color: #f4f6f8; color: #333; padding-bottom: 40px; }
+    
+    header { background: #1a252f; color: white; padding: 20px; text-align: center; }
+    header h1 { font-size: 2.2rem; color: #e74c3c; }
+    header h1 span { color: #f39c12; }
+    
+    .container { max-width: 1200px; margin: 20px auto; padding: 0 15px; }
+
+    /* Search & Filter Controls */
+    .controls { text-align: center; margin-bottom: 25px; }
+    .search-container input {
+      width: 100%; max-width: 650px; padding: 14px 20px; font-size: 1rem;
+      border: 2px solid #3498db; border-radius: 25px; outline: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: 0.3s; margin-bottom: 15px;
+    }
+    .search-container input:focus { border-color: #e74c3c; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+
+    .category-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 15px; }
+    .tab-btn {
+      background: #e2e8f0; border: none; padding: 8px 16px; border-radius: 20px;
+      cursor: pointer; font-weight: bold; color: #2c3e50; transition: 0.2s;
+    }
+    .tab-btn.active, .tab-btn:hover { background: #3498db; color: white; }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      background: white; border-radius: 10px; overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08); text-align: center;
+      padding: 15px; transition: transform 0.2s; display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .product-card:hover { transform: translateY(-4px); }
+    .product-card img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; }
+    .product-card .cat-badge { font-size: 0.75rem; background: #e8f4f8; color: #2980b9; padding: 3px 8px; border-radius: 12px; display: inline-block; margin-bottom: 5px; }
+    .product-card h3 { font-size: 1rem; color: #2c3e50; margin-bottom: 8px; min-height: 38px; }
+    .product-card .price { font-weight: bold; color: #27ae60; font-size: 1.1rem; margin-bottom: 12px; }
+    
+    .btn-buy {
+      display: block; background: #25d366; color: white;
+      padding: 8px 12px; text-decoration: none; border-radius: 5px;
+      font-weight: bold; transition: background 0.2s; font-size: 0.9rem;
+    }
+    .btn-buy:hover { background: #1eb954; }
+
+    #noResults { display: none; text-align: center; color: #7f8c8d; font-size: 1.2rem; margin-top: 30px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ZEE<span>-MART</span></h1>
+    <p>Supermarket, Grocery, Fashion & Footwear Store</p>
+  </header>
+
+  <div class="container">
+    
+    <div class="controls">
+      <!-- Live Search Bar -->
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="🔍 Search Grocery, Clothes, Shoes, Electronics (e.g. Kurta, Rice, Shoes)..." />
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="category-tabs" id="categoryTabs">
+        <button class="tab-btn active" data-category="All">All Categories</button>
+        <button class="tab-btn" data-category="Grocery">Grocery & Pantry</button>
+        <button class="tab-btn" data-category="Clothing">Clothing & Dressing</button>
+        <button class="tab-btn" data-category="Footwear">Shoes & Sleepers</button>
+        <button class="tab-btn" data-category="Personal Care">Personal Care</button>
+        <button class="tab-btn" data-category="Household">Household & Cleaning</button>
+        <button class="tab-btn" data-category="Electronics">Electronics</button>
+      </div>
+    </div>
+
+    <!-- Dynamic Product Grid -->
+    <div class="product-grid" id="productGrid"></div>
+    <div id="noResults">No products found matching your search.</div>
+
+  </div>
+
+  <script>
+    // Complete Inventory Data (Grocery, Clothes, Shoes, Household, Electronics)
+    const productsData = [
+      // Grocery & Food Items
+      { name: "Super Basmati Rice 5kg", category: "Grocery", price: "Rs. 1,850", image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400" },
+      { name: "Banaspati Cooking Oil 2L", category: "Grocery", price: "Rs. 1,050", image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" },
+      { name: "Cheesy Pizza & Fast Food", category: "Grocery", price: "Rs. 1,200", image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400" },
+      { name: "Crispy Zinger Burger", category: "Grocery", price: "Rs. 550", image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400" },
+      { name: "Daal Chana Premium 1kg", category: "Grocery", price: "Rs. 320", image: "https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?w=400" },
+      
+      // Clothing & Dressing (Men, Women, Kids)
+      { name: "Men Cotton Kurta Shalwar Suit", category: "Clothing", price: "Rs. 3,500", image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400" },
+      { name: "Women Unstitched 3-Piece Lawn Suit", category: "Clothing", price: "Rs. 4,200", image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400" },
+      { name: "Men Slim Fit Denim Jeans", category: "Clothing", price: "Rs. 2,200", image: "https://images.unsplash.com/photo-1542272604-780c36856f61?w=400" },
+      { name: "Kids Fancy Party Frock", category: "Clothing", price: "Rs. 2,500", image: "https://images.unsplash.com/photo-1621452773781-0f992fd1f5cb?w=400" },
+      { name: "Baby Onesies BodySuit (Pack of 3)", category: "Clothing", price: "Rs. 1,800", image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=400" },
+
+      // Shoes & Footwear
+      { name: "Men Traditional Peshawari Chappal", category: "Footwear", price: "Rs. 2,800", image: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=400" },
+      { name: "Men Sports Running Joggers", category: "Footwear", price: "Rs. 3,500", image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" },
+      { name: "Ladies Fancy Party Block Heels", category: "Footwear", price: "Rs. 3,200", image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400" },
+      { name: "Daily Comfort House Sleepers", category: "Footwear", price: "Rs. 850", image: "https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=400" },
+      { name: "Kids LED Light Sneakers", category: "Footwear", price: "Rs. 2,100", image: "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=400" },
+
+      // Personal Care & Household
+      { name: "Anti-Dandruff Shampoo 360ml", category: "Personal Care", price: "Rs. 650", image: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400" },
+      { name: "Washing Powder Surf 1kg", category: "Household", price: "Rs. 580", image: "https://images.unsplash.com/photo-1585830812416-a6c86bb14576?w=400" },
+
+      // Electronics
+      { name: "Wireless Bluetooth Headphones", category: "Electronics", price: "Rs. 2,500", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" },
+      { name: "Smart Fitness Watch", category: "Electronics", price: "Rs. 3,800", image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" },
+      { name: "Fast Charging Type-C Cable", category: "Electronics", price: "Rs. 450", image: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=400" }
+    ];
+
+    // WhatsApp Contact Number
+    const whatsappNum = "92336987944";
+
+    const productGrid = document.getElementById('productGrid');
+    const searchInput = document.getElementById('searchInput');
+    const noResults = document.getElementById('noResults');
+    const categoryTabs = document.getElementById('categoryTabs');
+
+    let currentCategory = 'All';
+
+    // Render Products Function
+    function renderProducts() {
+      productGrid.innerHTML = '';
+      const filterText = searchInput.value.toLowerCase().trim();
+      let matches = 0;
+
+      productsData.forEach(prod => {
+        const matchesCategory = (currentCategory === 'All' || prod.category === currentCategory);
+        const matchesSearch = prod.name.toLowerCase().includes(filterText);
+
+        if (matchesCategory && matchesSearch) {
+          matches++;
+          const card = document.createElement('div');
+          card.className = 'product-card';
+          
+          const waMessage = encodeURIComponent(`Hi, I want to order from Zee-Mart: ${prod.name} (${prod.price})`);
+          
+          card.innerHTML = `
+            <div>
+              <img src="${prod.image}" alt="${prod.name}">
+              <span class="cat-badge">${prod.category}</span>
+              <h3>${prod.name}</h3>
+            </div>
+            <div>
+              <div class="price">${prod.price}</div>
+              <a href="https://wa.me/${whatsappNum}?text=${waMessage}" target="_blank" class="btn-buy">💬 Order on WhatsApp</a>
+            </div>
+          `;
+          productGrid.appendChild(card);
+        }
+      });
+
+      noResults.style.display = matches === 0 ? 'block' : 'none';
+    }
+
+    // Live Search Event Listener
+    searchInput.addEventListener('input', renderProducts);
+
+    // Category Tab Event Listener
+    categoryTabs.addEventListener('click', (e) => {
+      if (e.target.classList.contains('tab-btn')) {
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+        currentCategory = e.target.getAttribute('data-category');
+        renderProducts();
+      }
+    });
+
+    // Initial Render
+    renderProducts();
+  </script>
+</body>
+</html>
+// Zee-Mart Restaurant & Local Hotel Linked Items
+const restaurantItems = [
+  { 
+    name: "Crispy Zinger Burger & Fries", 
+    category: "Fast Food", 
+    hotelName: "Zee Fast Food Cafe", 
+    price: "Rs. 550", 
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400" 
+  },
+  { 
+    name: "Special Chicken Biryani (Full)", 
+    category: "Desi Hotel", 
+    hotelName: "Khyber Hotel & Restaurant", 
+    price: "Rs. 380", 
+    image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400" 
+  },
+  { 
+    name: "Chicken Tikka Pizza (Medium)", 
+    category: "Fast Food", 
+    hotelName: "Pizza Town", 
+    price: "Rs. 1,100", 
+    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400" 
+  },
+  { 
+    name: "Chicken Karahi (Half)", 
+    category: "Desi Hotel", 
+    hotelName: "Madina Shinwari Hotel", 
+    price: "Rs. 950", 
+    image: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=400" 
+  }
+];
