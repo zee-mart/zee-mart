@@ -3,7 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZEE-MART | Megastore Catalog & COD Store</title>
+  <title>ZEE-MART | Official Supermarket & Hardware Store</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="ZEE-MART Megastore - Buy Groceries, Hardware Tools, Electronics, Apparel, and Footwear with Cash on Delivery in Pakistan." />
+  <meta name="keywords" content="ZEE-MART, online shopping, hardware tools, grocery, electronics, COD Pakistan" />
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Embedded CSS Styles -->
   <style>
     :root {
       --primary: #10b981;
@@ -12,10 +21,23 @@
       --dark: #0f172a;
       --badge: #ef4444;
       --blue: #3b82f6;
+      --bg-light: #f8fafc;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
-    body { background: #f4f6f9; color: #333; padding-bottom: 50px; }
 
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+    }
+    
+    body { 
+      background: var(--bg-light); 
+      color: #333; 
+      padding-bottom: 20px; 
+    }
+
+    /* Top Announcement Bar */
     .social-bar {
       background: var(--dark);
       color: white;
@@ -27,8 +49,16 @@
       gap: 10px;
       font-size: 13px;
     }
-    .contact-info { display: flex; gap: 15px; flex-wrap: wrap; }
-    .social-bar a { color: #38bdf8; text-decoration: none; font-weight: bold; }
+    .contact-info { 
+      display: flex; 
+      gap: 15px; 
+      flex-wrap: wrap; 
+    }
+    .social-bar a { 
+      color: #38bdf8; 
+      text-decoration: none; 
+      font-weight: bold; 
+    }
 
     .btn-admin {
       background: var(--blue);
@@ -38,60 +68,112 @@
       border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
+      transition: 0.2s;
     }
+    .btn-admin:hover { opacity: 0.9; }
 
+    /* Main Header */
     header {
       background: var(--primary);
-      padding: 20px;
+      padding: 25px 20px;
       text-align: center;
       color: white;
       position: sticky;
       top: 0;
       z-index: 900;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-    .brand-logo h1 { font-size: 32px; font-weight: 800; letter-spacing: 1px; }
+    .brand-logo h1 { 
+      font-size: 36px; 
+      font-weight: 800; 
+      letter-spacing: 1px; 
+    }
     .brand-logo h1 span { color: var(--accent); }
-    .brand-tagline { font-size: 13px; color: #ecfdf5; margin-bottom: 15px; }
+    .brand-tagline { 
+      font-size: 14px; 
+      color: #ecfdf5; 
+      margin-bottom: 18px; 
+    }
 
-    .search-box { max-width: 650px; margin: 0 auto; }
+    .search-box { 
+      max-width: 650px; 
+      margin: 0 auto; 
+    }
     .search-box input {
       width: 100%;
-      padding: 14px 20px;
+      padding: 14px 22px;
       border: none;
-      border-radius: 25px;
+      border-radius: 30px;
       font-size: 16px;
       outline: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+    .search-box input:focus { 
+      box-shadow: 0 0 0 4px rgba(250, 204, 21, 0.5); 
     }
 
-    .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+    /* Main Container & Categories */
+    .container { 
+      max-width: 1200px; 
+      margin: 30px auto; 
+      padding: 0 20px; 
+    }
 
-    .categories { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 15px; margin-bottom: 20px; }
+    .categories { 
+      display: flex; 
+      gap: 10px; 
+      overflow-x: auto; 
+      padding-bottom: 15px; 
+      margin-bottom: 20px; 
+      scrollbar-width: thin; 
+    }
     .cat-btn {
       background: white;
-      border: 1px solid #ddd;
-      padding: 8px 16px;
+      border: 1px solid #cbd5e1;
+      padding: 8px 18px;
       border-radius: 20px;
       cursor: pointer;
-      font-weight: bold;
-      color: #333;
+      font-weight: 600;
+      color: #475569;
       white-space: nowrap;
+      transition: 0.2s;
     }
-    .cat-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+    .cat-btn:hover { background: #f1f5f9; }
+    .cat-btn.active { 
+      background: var(--primary); 
+      color: white; 
+      border-color: var(--primary); 
+    }
 
-    .catalog-count { font-size: 14px; color: #666; margin-bottom: 15px; font-weight: 600; }
+    .catalog-count { 
+      font-size: 14px; 
+      color: #64748b; 
+      margin-bottom: 15px; 
+      font-weight: 600; 
+    }
 
-    .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+    /* Products Grid */
+    .product-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
+      gap: 20px; 
+    }
     .product-card {
       background: white;
       border-radius: 12px;
       padding: 15px;
       position: relative;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+      border: 1px solid #e2e8f0;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .product-card:hover { 
+      transform: translateY(-3px); 
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08); 
     }
 
     .img-wrapper {
@@ -100,12 +182,13 @@
       background: #f1f5f9;
       border-radius: 8px;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       margin-bottom: 12px;
     }
-    .product-img { width: 100%; height: 100%; object-fit: cover; }
+    .product-img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+    }
 
     .discount-badge {
       position: absolute;
@@ -120,23 +203,62 @@
       z-index: 2;
     }
 
-    .product-cat { font-size: 11px; color: #888; text-transform: uppercase; font-weight: bold; }
-    .product-title { font-size: 15px; font-weight: bold; margin: 4px 0 6px 0; color: #111; }
-    
-    .policy-tag { font-size: 11px; color: var(--primary-dark); font-weight: 600; margin-bottom: 2px; }
-    .quality-remark { font-size: 11px; color: #666; font-style: italic; margin-bottom: 8px; }
+    .product-cat { 
+      font-size: 11px; 
+      color: #94a3b8; 
+      text-transform: uppercase; 
+      font-weight: bold; 
+    }
+    .product-title { 
+      font-size: 15px; 
+      font-weight: bold; 
+      margin: 4px 0 6px 0; 
+      color: #0f172a; 
+      line-height: 1.3; 
+    }
+
+    .policy-tag { 
+      font-size: 11px; 
+      color: var(--primary-dark); 
+      font-weight: 600; 
+      margin-bottom: 2px; 
+    }
+    .quality-remark { 
+      font-size: 11px; 
+      color: #64748b; 
+      font-style: italic; 
+      margin-bottom: 8px; 
+    }
 
     .price-box { margin-bottom: 6px; }
-    .orig-price { text-decoration: line-through; color: #888; font-size: 13px; margin-right: 6px; }
-    .final-price { color: var(--primary-dark); font-size: 17px; font-weight: bold; }
-    .delivery-tag { font-size: 11px; color: #e65100; font-weight: 700; margin-bottom: 10px; }
+    .orig-price { 
+      text-decoration: line-through; 
+      color: #94a3b8; 
+      font-size: 13px; 
+      margin-right: 6px; 
+    }
+    .final-price { 
+      color: var(--primary-dark); 
+      font-size: 18px; 
+      font-weight: bold; 
+    }
+    .delivery-tag { 
+      font-size: 11px; 
+      color: #ea580c; 
+      font-weight: 700; 
+      margin-bottom: 12px; 
+    }
 
-    .btn-group { display: flex; flex-direction: column; gap: 6px; }
+    .btn-group { 
+      display: flex; 
+      flex-direction: column; 
+      gap: 6px; 
+    }
     .btn-cod {
       background: #f97316;
       color: white;
       text-align: center;
-      padding: 8px;
+      padding: 10px;
       border: none;
       border-radius: 6px;
       font-weight: bold;
@@ -146,13 +268,14 @@
       background: #25d366;
       color: white;
       text-align: center;
-      padding: 8px;
+      padding: 10px;
       border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
       font-size: 13px;
     }
 
+    /* Modals & Popups */
     .modal-overlay {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -178,20 +301,46 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 15px;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid #e2e8f0;
       padding-bottom: 10px;
     }
-    .close-modal { cursor: pointer; font-size: 22px; color: #888; border: none; background: none; }
+    .close-modal { 
+      cursor: pointer; 
+      font-size: 24px; 
+      color: #94a3b8; 
+      border: none; 
+      background: none; 
+    }
 
-    .form-group { margin-bottom: 12px; }
-    .form-group label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 4px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { 
+      display: block; 
+      font-size: 13px; 
+      font-weight: bold; 
+      margin-bottom: 4px; 
+      color: #334155; 
+    }
     .form-group input, .form-group select, .form-group textarea {
       width: 100%;
       padding: 10px;
-      border: 1px solid #ccc;
+      border: 1px solid #cbd5e1;
       border-radius: 6px;
       font-size: 14px;
       outline: none;
+    }
+    .form-group input:focus { border-color: var(--primary); }
+
+    .order-summary { 
+      background: #fff7ed; 
+      padding: 12px; 
+      border-radius: 6px; 
+      margin-bottom: 14px; 
+      font-size: 13px; 
+    }
+    .total-text { 
+      color: #c2410c; 
+      font-size: 16px; 
+      margin-top: 4px; 
     }
 
     .btn-submit {
@@ -206,40 +355,84 @@
       cursor: pointer;
     }
 
-    .review-section { margin-top: 40px; background: white; padding: 20px; border-radius: 12px; }
-    .review-section h2 { font-size: 18px; margin-bottom: 15px; color: var(--dark); }
-    .review-card { background: #f8fafc; padding: 10px 14px; border-radius: 8px; margin-bottom: 10px; }
-    .review-header { display: flex; justify-content: space-between; font-weight: bold; font-size: 13px; }
-    .review-comment { font-size: 13px; color: #444; margin-top: 4px; }
+    /* Reviews Section */
+    .review-section { 
+      margin-top: 40px; 
+      background: white; 
+      padding: 25px; 
+      border-radius: 12px; 
+      border: 1px solid #e2e8f0; 
+    }
+    .review-section h2 { 
+      font-size: 18px; 
+      margin-bottom: 15px; 
+      color: var(--dark); 
+    }
+    .review-card { 
+      background: #f8fafc; 
+      padding: 12px 16px; 
+      border-radius: 8px; 
+      margin-bottom: 10px; 
+      border-left: 4px solid var(--primary); 
+    }
+    .review-header { 
+      display: flex; 
+      justify-content: space-between; 
+      font-weight: bold; 
+      font-size: 13px; 
+    }
+    .review-comment { 
+      font-size: 13px; 
+      color: #475569; 
+      margin-top: 4px; 
+    }
 
-    #noResults { display: none; text-align: center; color: #7f8c8d; font-size: 1.2rem; margin-top: 30px; }
+    #noResults { 
+      display: none; 
+      text-align: center; 
+      color: #94a3b8; 
+      font-size: 1.2rem; 
+      margin-top: 40px; 
+    }
+
+    footer { 
+      text-align: center; 
+      margin-top: 40px; 
+      font-size: 12px; 
+      color: #94a3b8; 
+    }
   </style>
 </head>
 <body>
 
+  <!-- Top Contact / Admin Bar -->
   <div class="social-bar">
     <div class="contact-info">
-      <span>✉️ <a href="mailto:zohaibejaz098@gmail.com">zohaibejaz098@gmail.com</a></span>
-      <span>📱 <a href="https://wa.me/92336987944" target="_blank">+92 336 987944</a></span>
+      <span><i class="fa-solid fa-envelope"></i> <a href="mailto:zohaibejaz098@gmail.com">zohaibejaz098@gmail.com</a></span>
+      <span><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/92336987944" target="_blank">+92 336 987944</a></span>
     </div>
-    <button class="btn-admin" onclick="toggleModal('adminModal', true)">⚙️ Admin Panel</button>
+    <button class="btn-admin" onclick="toggleModal('adminModal', true)"><i class="fa-solid fa-gear"></i> Admin Panel</button>
   </div>
 
+  <!-- Header & Search -->
   <header>
     <div class="brand-logo">
       <h1>ZEE<span>-MART</span></h1>
     </div>
     <p class="brand-tagline">Complete Supermarket & Hardware Store • 7-Day Money-Back Guarantee</p>
     <div class="search-box">
-      <input type="text" id="searchInput" placeholder="🔍 Search among 500+ items (e.g. Drill, LED Bulb, Jeans, Shoes, Basmati)..." />
+      <input type="text" id="searchInput" placeholder="🔍 Search items (e.g. Drill, LED Bulb, Jeans, Shoes, Basmati)..." />
     </div>
   </header>
 
+  <!-- Main Container -->
   <div class="container">
-    <div class="categories">
+    
+    <!-- Category Filter Buttons -->
+    <div class="categories" id="categoryContainer">
       <button class="cat-btn active" onclick="filterCategory('all', this)">All Items</button>
       <button class="cat-btn" onclick="filterCategory('grocery', this)">🛒 Grocery & Staples</button>
-      <button class="cat-btn" onclick="filterCategory('hardware', this)">🔧 Hardware & Spare Parts</button>
+      <button class="cat-btn" onclick="filterCategory('hardware', this)">🔧 Hardware & Tools</button>
       <button class="cat-btn" onclick="filterCategory('electronics', this)">⚡ Electronics</button>
       <button class="cat-btn" onclick="filterCategory('gents', this)">👔 Gents Apparel</button>
       <button class="cat-btn" onclick="filterCategory('ladies', this)">👗 Ladies Apparel</button>
@@ -249,26 +442,28 @@
 
     <div class="catalog-count" id="catalogCount">Loading store items...</div>
 
+    <!-- Dynamic Product Grid -->
     <div class="product-grid" id="productGrid"></div>
-    <div id="noResults">No products found matching your search.</div>
+    <div id="noResults"><i class="fa-solid fa-magnifying-glass"></i> No products found matching your search.</div>
 
+    <!-- Customer Reviews Section -->
     <div class="review-section">
       <h2>💬 Customer Remarks & Store Reviews</h2>
-      <form id="commentForm" style="margin-bottom: 20px;">
+      <form id="commentForm">
         <div class="form-group">
-          <input type="text" id="custName" placeholder="Your Name" required />
+          <input type="text" id="custName" placeholder="Your Full Name" required />
         </div>
         <div class="form-group">
           <textarea id="custComment" rows="2" placeholder="Write feedback or quality remarks..." required></textarea>
         </div>
-        <button type="submit" class="btn-submit" style="width: auto; padding: 8px 18px;">Post Review</button>
+        <button type="submit" class="btn-submit" style="width: auto; padding: 10px 24px;">Post Review</button>
       </form>
 
-      <div id="commentsList"></div>
+      <div id="commentsList" style="margin-top: 20px;"></div>
     </div>
   </div>
 
-  <!-- Cash on Delivery Order Modal -->
+  <!-- Cash on Delivery Modal Popup -->
   <div class="modal-overlay" id="codModal">
     <div class="modal-content">
       <div class="modal-header">
@@ -284,47 +479,47 @@
           <input type="text" id="displayItemName" readonly />
         </div>
         <div class="form-group">
-          <label>Customer Full Name</label>
-          <input type="text" id="custFullName" required />
+          <label>Full Name</label>
+          <input type="text" id="custFullName" required placeholder="Enter your full name" />
         </div>
         <div class="form-group">
-          <label>Mobile Number</label>
+          <label>Mobile / WhatsApp Number</label>
           <input type="tel" id="custPhone" placeholder="03XXXXXXXXX" required />
         </div>
         <div class="form-group">
           <label>Full Delivery Address</label>
-          <textarea id="custAddress" rows="2" required></textarea>
+          <textarea id="custAddress" rows="3" required placeholder="House #, Street #, Area, City"></textarea>
         </div>
         
-        <div style="background: #fff7ed; padding: 10px; border-radius: 6px; margin-bottom: 12px; font-size: 13px;">
+        <div class="order-summary">
           <div>Item Price: <strong id="summaryPrice">PKR 0</strong></div>
-          <div>Delivery Fee: <strong>PKR 300</strong></div>
-          <hr style="margin: 6px 0;">
-          <div style="color: #c2410c; font-size: 15px;">Total Payable: <strong id="summaryTotal">PKR 0</strong></div>
+          <div>Delivery Charges: <strong>PKR 300</strong></div>
+          <hr style="margin: 8px 0;">
+          <div class="total-text">Total Payable: <strong id="summaryTotal">PKR 0</strong></div>
         </div>
 
-        <button type="submit" class="btn-submit">✅ Confirm COD Order</button>
+        <button type="submit" class="btn-submit">✅ Confirm Order via WhatsApp</button>
       </form>
     </div>
   </div>
 
-  <!-- Admin Add Product Modal -->
+  <!-- Admin Panel Modal Popup -->
   <div class="modal-overlay" id="adminModal">
     <div class="modal-content">
       <div class="modal-header">
-        <h2>Add Custom Item</h2>
+        <h2>➕ Add New Item to Store</h2>
         <button class="close-modal" onclick="toggleModal('adminModal', false)">&times;</button>
       </div>
       <form id="productForm">
         <div class="form-group">
           <label>Product Name</label>
-          <input type="text" id="pName" required />
+          <input type="text" id="pName" placeholder="e.g. Electric Drill Machine" required />
         </div>
         <div class="form-group">
           <label>Category</label>
           <select id="pCategory">
             <option value="grocery">Grocery & Staples</option>
-            <option value="hardware">Hardware & Spare Parts</option>
+            <option value="hardware">Hardware & Tools</option>
             <option value="electronics">Electronics</option>
             <option value="gents">Gents Apparel</option>
             <option value="ladies">Ladies Apparel</option>
@@ -333,100 +528,57 @@
           </select>
         </div>
         <div class="form-group">
-          <label>Image URL</label>
-          <input type="url" id="pImg" required />
+          <label>Image URL (Optional - Leave blank for Auto AI Image)</label>
+          <input type="url" id="pImg" placeholder="https://..." />
         </div>
         <div class="form-group">
           <label>Quality Remark</label>
-          <input type="text" id="pRemark" placeholder="e.g. Premium Grade Guaranteed" required />
+          <input type="text" id="pRemark" value="Verified Premium Quality" required />
         </div>
-        <div style="display: flex; gap: 8px;">
+        <div style="display: flex; gap: 10px;">
           <div class="form-group" style="flex:1;">
             <label>Cost (PKR)</label>
-            <input type="number" id="pCost" required min="1" />
+            <input type="number" id="pCost" required min="1" value="1000" />
           </div>
           <div class="form-group" style="flex:1;">
-            <label>Markup %</label>
-            <input type="number" id="pMarkup" required min="0" />
+            <label>Profit %</label>
+            <input type="number" id="pMarkup" required min="0" value="25" />
           </div>
           <div class="form-group" style="flex:1;">
             <label>Discount %</label>
-            <input type="number" id="pDiscount" required min="0" />
+            <input type="number" id="pDiscount" required min="0" value="10" />
           </div>
         </div>
-        <button type="submit" class="btn-submit">➕ Save Product</button>
+        <button type="submit" class="btn-submit">➕ Save & Publish Item</button>
       </form>
     </div>
   </div>
 
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 ZEE-MART Megastore. All Rights Reserved. Designed for Superfast Online Shopping.</p>
+  </footer>
+
+  <!-- Embedded JavaScript Engine -->
   <script>
     const userPhone = "92336987944";
     const deliveryCharge = 300;
 
-    // Categorized Raw List
-    const rawGrocery = [
-      "Aam Papad", "Aata", "Ajwain", "Almonds", "Anardana", "Apple Jam", "Apple Juice", "Apricot", "Arrowroot Powder", "Asafoetida", "Atta Biscuits", "Avocado Oil",
-      "Baking Powder", "Baking Soda", "Basmati Rice", "Bay Leaves", "Beans", "Beef Cubes", "Beef Mince", "Besan", "Black Cardamom", "Black Pepper", "Black Tea", "Blueberry Jam", "Bread", "Bread Crumbs", "Breakfast Cereal", "Brown Rice", "Brown Sugar", "Butter",
-      "Cake Flour", "Cake Mix", "Candy", "Canned Beans", "Canned Corn", "Canned Peas", "Canned Tuna", "Cardamom", "Carrot Juice", "Cashews", "Cereal", "Chaat Masala", "Chana Dal", "Cheddar Cheese", "Cheese Slices", "Chia Seeds", "Chickpeas", "Chicken Nuggets", "Chicken Sausages", "Chili Flakes", "Chili Sauce", "Chocolate", "Chocolate Biscuits", "Chocolate Spread", "Cinnamon", "Cloves", "Coconut Milk", "Coconut Oil", "Coconut Powder", "Coffee", "Corn Flour", "Corn Flakes", "Corn Oil", "Corn Starch", "Crackers", "Cream", "Cream Cheese", "Custard Powder", "Cumin Seeds",
-      "Dates", "Deggi Mirch", "Desi Ghee", "Dried Apricots", "Dried Coconut", "Dried Figs", "Dried Mango", "Dried Peas", "Dried Plums", "Dried Raisins", "Dried Soya Beans",
-      "Egg Noodles", "Eggs", "Energy Drink", "Evaporated Milk", "Extra Virgin Olive Oil",
-      "Falooda Mix", "Farina", "Fennel Seeds", "Fig Jam", "Fish Fingers", "Fish Sauce", "Flour", "French Beans", "Fried Onions", "Fruit Cocktail", "Fruit Jam", "Fruit Juice",
-      "Garlic", "Garlic Powder", "Garlic Sauce", "Ginger", "Ginger Garlic Paste", "Ginger Powder", "Ghee", "Glucose Biscuits", "Gram Flour", "Granola", "Green Cardamom", "Green Chilies", "Green Tea", "Guava Juice",
-      "Haldi Powder", "Honey", "Hot Sauce", "Hot Chocolate", "Hummus",
-      "Icing Sugar", "Instant Coffee", "Instant Noodles", "Iodized Salt", "Italian Herbs",
-      "Jalapeno", "Jam", "Jelly", "Jeera", "Jeera Powder", "Jaggery", "Juice",
-      "Ketchup", "Kidney Beans", "Kheer Mix", "Korma Masala", "Kulfa Seeds",
-      "Lady Finger", "Lemon Juice", "Lemon Pickle", "Lemon Salt", "Lentils", "Licorice", "Lime Juice", "Litchi Juice",
-      "Macaroni", "Mango Chutney", "Mango Juice", "Mango Pickle", "Mayonnaise", "Milk", "Milk Powder", "Millet", "Mint Sauce", "Mixed Nuts", "Mixed Pickle", "Molasses", "Mustard Oil", "Mustard Paste", "Mustard Seeds", "Muesli", "Mushroom", "Mushroom Soup", "Mung Dal", "Moong Beans",
-      "Naan", "Natural Honey", "Nectar Juice", "Noodles", "Nutella", "Nutmeg", "Nuts Mix",
-      "Oats", "Olive Oil", "Olives", "Onion Powder", "Onion Seeds", "Orange Juice", "Orange Marmalade", "Oreo Biscuits",
-      "Pakora Mix", "Papad", "Paprika", "Pasta", "Pasta Sauce", "Peanut Butter", "Peanuts", "Peas", "Pepper Sauce", "Pickle", "Pine Nuts", "Pineapple Juice", "Pista", "Pizza Sauce", "Plum Jam", "Popcorn", "Popcorn Kernels", "Potato Chips", "Potato Flakes", "Powdered Milk", "Prawns", "Prunes", "Pulses", "Pumpkin Seeds",
-      "Quinoa", "Quinoa Flour", "Quinoa Seeds",
-      "Raisins", "Red Beans", "Red Chili Powder", "Red Lentils", "Red Pepper", "Rice", "Rice Flour", "Rice Noodles", "Rice Vinegar", "Roasted Chickpeas", "Roasted Peanuts", "Rose Water", "Rusks",
-      "Saffron", "Salad Dressing", "Salt", "Salted Biscuits", "Sandwich Spread", "Samosa Sheets", "Sesame Oil", "Sesame Seeds", "Seviyan", "Sharbat", "Shredded Coconut", "Simmer Sauce", "Snack Mix", "Soda", "Soya Beans", "Soya Chunks", "Soya Sauce", "Spaghetti", "Spice Mix", "Spinach", "Spring Roll Sheets", "Strawberry Jam", "Strawberry Juice", "Sugar", "Sunflower Oil", "Sunflower Seeds", "Sweet Corn", "Sweet Chili Sauce", "Syrup",
-      "Tamarind", "Tamarind Chutney", "Tea", "Tea Bags", "Tinned Peas", "Tomato Ketchup", "Tomato Paste", "Tomato Puree", "Tomato Sauce", "Tortilla Chips", "Turmeric Powder", "Tuna", "Toffee", "Trail Mix",
-      "UHT Milk", "Urad Dal", "Urad Flour",
-      "Vanilla Essence", "Vanilla Powder", "Vegetable Oil", "Vermicelli", "Vinegar", "Vitamin Water",
-      "Walnuts", "Wheat", "Wheat Flour", "Wheat Bran", "Wheat Germ", "White Pepper", "White Sugar", "Whole Milk", "Whole Wheat Flour", "Wafers", "Worcestershire Sauce",
-      "Yeast", "Yogurt", "Yellow Lentils",
-      "Zaatar", "Zucchini"
-    ];
+    // Items List
+    const rawGrocery = ["Aam Papad", "Aata", "Almonds", "Anardana", "Apple Jam", "Basmati Rice", "Black Tea", "Bread", "Butter", "Chicken Nuggets", "Chocolate", "Coffee", "Eggs", "Honey", "Milk", "Olive Oil", "Red Chili Powder", "Sugar", "Yogurt"];
+    const rawHardware = ["Allen Key Set", "Anchor Bolt", "Bearing", "Cable Tie", "Drill Machine", "Hammer", "Hand Saw", "Pliers", "Screwdriver", "Toolbox", "Wrench", "Safety Helmet", "Duct Tape", "Grinder"];
+    const rawElectronics = ["LED Bulb", "Ceiling Fan", "Extension Board", "Mobile Charger", "Fast Charger", "USB Cable", "Bluetooth Speaker", "Earphones", "Smart TV Stick", "CCTV Camera", "Wi-Fi Router", "Electric Kettle"];
+    const rawGents = ["Men T-Shirt", "Polo Shirt", "Formal Shirt", "Men Jeans", "Cargo Pants", "Shalwar Kameez", "Kurta", "Blazer", "Jacket", "Sweater", "Hoodie", "Sports Socks"];
+    const rawLadies = ["Ladies Kurti", "Shalwar Kameez", "Three Piece Suit", "Lawn Suit", "Maxi Dress", "Ladies Jeans", "Abaya", "Dupatta", "Ladies Jacket", "Ladies Handbag"];
+    const rawKids = ["Baby Bodysuit", "Baby Romper", "Baby Frock", "Baby Sweater", "Kids Jeans", "Kids T-Shirt", "Kids Jacket", "School Uniform Shirt", "Kids Toys"];
+    const rawShoes = ["Men Formal Shoes", "Men Sports Shoes", "Men Joggers", "Men Sneakers", "Men Peshawari Chappal", "Ladies Heels", "Ladies Sandals", "Ladies Khussa", "Baby Shoes", "Kids School Shoes"];
 
-    const rawHardware = [
-      "Allen Key Set", "Anchor Bolt", "Angle Bracket", "Bearing", "Belt", "Bolt", "Brass Nut", "Cable Tie", "Car Fuse", "Chain", "Clamp", "Clip", "Connector", "Copper Wire", "Coupling", "Drill Bit", "Dowel", "Extension Rod", "Fan Belt", "Fuse", "Gear", "Gear Oil", "Grease", "Hose Pipe", "Iron Clamp", "Key", "Lock", "Lubricant", "Machine Belt", "Machine Screw", "Metal Sheet", "Nut", "Oil Seal", "O-Ring", "Pipe Clamp", "Plug", "PVC Pipe", "Pulley", "Rubber Sheet", "Screw", "Screwdriver", "Shaft", "Shim", "Socket", "Spring", "Steel Rod", "Steel Wire", "Stud", "Switch", "Tape", "Terminal", "Thread Rod", "Washer", "Welding Rod", "Wire Connector", "Wood Screw", "Wrench", "Adjustable Wrench", "Combination Spanner", "Pipe Wrench", "Cutting Disc", "Grinding Disc", "Sandpaper", "Hacksaw Blade", "Drill Chuck", "Drill Machine", "Grinder", "Hammer", "Hand Saw", "Pliers", "Nose Pliers", "Cutter", "Measuring Tape", "Spirit Level", "Toolbox", "Tool Kit", "Safety Gloves", "Safety Goggles", "Safety Helmet", "Masking Tape", "Duct Tape", "Electrical Tape", "Teflon Tape", "Insulation Tape", "Silicone", "Silicone Gun", "Glue Gun", "Glue Stick", "Super Glue", "Epoxy", "Metal Polish", "Rust Remover", "Contact Cleaner", "Engine Oil", "Hydraulic Oil", "Brake Oil", "Grease Gun", "Oil Can", "Funnel", "Cleaning Brush"
-    ];
+    // Dynamic AI Image Generator
+    function getAIImageUrl(productName) {
+      return `https://pollinations.ai/p/${encodeURIComponent(productName)}?width=400&height=300&seed=42&nologo=true`;
+    }
 
-    const rawElectronics = [
-      "LED Bulb", "LED Tube", "LED Panel", "LED Downlight", "LED Floodlight", "LED Strip", "LED Driver", "Bulb Holder", "Tube Holder", "Ceiling Rose", "Ceiling Fan", "Exhaust Fan", "Table Fan", "Pedestal Fan", "Fan Regulator", "Fan Capacitor", "Switch", "Dimmer Switch", "Push Button", "Rocker Switch", "Socket", "Universal Socket", "USB Socket", "Plug", "Three Pin Plug", "Adapter", "Travel Adapter", "Extension Board", "Extension Cable", "Power Strip", "Voltage Stabilizer", "UPS", "Inverter", "Battery", "Dry Battery", "Rechargeable Battery", "Battery Charger", "Mobile Charger", "Fast Charger", "USB Cable", "Type-C Cable", "Micro USB Cable", "Lightning Cable", "HDMI Cable", "VGA Cable", "AUX Cable", "LAN Cable", "Coaxial Cable", "RCA Cable", "Speaker Cable", "Earphones", "Headphones", "Bluetooth Earbuds", "Bluetooth Speaker", "Computer Speaker", "Sound Bar", "Microphone", "CCTV Camera", "CCTV DVR", "CCTV NVR", "CCTV Adapter", "CCTV Cable", "CCTV Connector", "CCTV Power Supply", "Wi-Fi Router", "Wi-Fi Repeater", "Network Switch", "Modem", "Ethernet Connector", "USB Hub", "USB Flash Drive", "Memory Card", "Card Reader", "Keyboard", "Mouse", "Mouse Pad", "Webcam", "Computer Monitor", "LED Monitor", "HDMI Splitter", "HDMI Switch", "Remote Control", "Universal Remote", "TV Box", "Android Box", "Smart TV Stick", "Television", "DVD Player", "Media Player", "Projector", "Projector Screen", "Digital Clock", "Wall Clock", "Calculator", "Digital Weighing Scale", "Electric Kettle", "Electric Iron", "Hair Dryer", "Hair Trimmer", "Electric Shaver"
-    ];
-
-    const rawGents = [
-      "Men T-Shirt", "Polo Shirt", "Formal Shirt", "Casual Shirt", "Dress Shirt", "Denim Shirt", "Flannel Shirt", "Linen Shirt", "Half Sleeve Shirt", "Full Sleeve Shirt", "Men Jeans", "Slim Fit Jeans", "Regular Fit Jeans", "Straight Fit Jeans", "Skinny Jeans", "Cargo Pants", "Chino Pants", "Formal Pants", "Track Pants", "Jogger Pants", "Cotton Pants", "Linen Pants", "Shorts", "Denim Shorts", "Sports Shorts", "Men Shalwar", "Men Kameez", "Shalwar Kameez", "Kurta", "Kurta Pajama", "Waistcoat", "Sherwani", "Blazer", "Suit", "Three Piece Suit", "Two Piece Suit", "Coat", "Jacket", "Denim Jacket", "Leather Jacket", "Winter Coat", "Sweater", "Cardigan", "Hoodie", "Sweatshirt", "Tracksuit", "Thermal Shirt", "Thermal Pants", "Undershirt", "Vest", "Briefs", "Boxer Shorts", "Socks", "Sports Socks", "Formal Socks", "Tie", "Bow Tie", "Belt", "Suspenders", "Men Night Suit"
-    ];
-
-    const rawLadies = [
-      "Ladies T-Shirt", "Ladies Polo Shirt", "Ladies Shirt", "Ladies Blouse", "Ladies Top", "Ladies Tunic", "Ladies Kurti", "Long Kurti", "Short Kurti", "Embroidered Kurti", "Ladies Kameez", "Shalwar Kameez", "Ladies Suit", "Two Piece Suit", "Three Piece Suit", "Lawn Suit", "Cotton Suit", "Linen Suit", "Chiffon Suit", "Silk Suit", "Embroidered Suit", "Party Wear Suit", "Formal Dress", "Casual Dress", "Maxi Dress", "Midi Dress", "Long Dress", "Short Dress", "Evening Dress", "Party Dress", "Skirt", "Long Skirt", "Pleated Skirt", "Jeans", "Ladies Jeans", "Skinny Jeans", "Straight Jeans", "Wide Leg Jeans", "Mom Jeans", "Leggings", "Tights", "Palazzo Pants", "Culottes", "Ladies Trousers", "Formal Trousers", "Track Pants", "Joggers", "Shorts", "Denim Jacket", "Ladies Jacket", "Leather Jacket", "Blazer", "Coat", "Sweater", "Cardigan", "Hoodie", "Sweatshirt", "Shawl", "Dupatta", "Chadar", "Hijab", "Abaya", "Jilbab", "Night Suit", "Pajama Set", "Camisole", "Ladies Vest", "Bra", "Ladies Underwear", "Ladies Socks"
-    ];
-
-    const rawKids = [
-      "Baby T-Shirt", "Baby Shirt", "Baby Bodysuit", "Baby Romper", "Baby Frock", "Baby Dress", "Baby Kurta", "Baby Shalwar", "Baby Shalwar Kameez", "Baby Pajama", "Baby Trouser", "Baby Jeans", "Baby Shorts", "Baby Leggings", "Baby Socks", "Baby Cap", "Baby Bib", "Baby Mittens", "Baby Gloves", "Baby Sweater", "Baby Cardigan", "Baby Jacket", "Baby Hoodie", "Baby Tracksuit", "Baby Night Suit", "Baby Blanket", "Baby Thermal Set", "Kids T-Shirt", "Kids Polo Shirt", "Kids Shirt", "Kids Jeans", "Kids Cargo Pants", "Kids Chino Pants", "Kids Shorts", "Kids Trousers", "Kids Joggers", "Kids Track Pants", "Kids Kurta", "Kids Shalwar Kameez", "Kids Waistcoat", "Kids Suit", "Kids Blazer", "Kids Jacket", "Kids Coat", "Kids Sweater", "Kids Cardigan", "Kids Hoodie", "Kids Sweatshirt", "Kids Frock", "Kids Maxi", "Kids Skirt", "Kids Leggings", "Kids Night Suit", "Kids Pajama", "School Uniform Shirt", "School Uniform Pants", "School Uniform Skirt", "School Uniform Tie", "School Sweater", "School Blazer", "School Socks", "School Belt", "School Cap", "Baby Headband", "Kids Scarf", "Kids Gloves", "Kids Winter Cap", "Kids Thermal", "Kids Undergarments"
-    ];
-
-    const rawShoes = [
-      "Men Formal Shoes", "Men Casual Shoes", "Men Sports Shoes", "Men Running Shoes", "Men Joggers", "Men Sneakers", "Men Boots", "Men Leather Boots", "Men Chelsea Boots", "Men Hiking Shoes", "Men Trekking Shoes", "Men Safety Shoes", "Men Work Shoes", "Men Loafers", "Men Moccasins", "Men Slip-On Shoes", "Men Derby Shoes", "Men Oxford Shoes", "Men Brogue Shoes", "Men Driving Shoes", "Men Tennis Shoes", "Men Football Shoes", "Men Cricket Shoes", "Men Basketball Shoes", "Men Training Shoes", "Men Walking Shoes", "Men Sandals", "Men Slippers", "Men Flip Flops", "Men Chappal", "Men Peshawari Chappal", "Men Leather Chappal", "Men Kolhapuri Sandals", "Ladies Formal Shoes", "Ladies Casual Shoes", "Ladies Sports Shoes", "Ladies Running Shoes", "Ladies Sneakers", "Ladies Boots", "Ladies Ankle Boots", "Ladies Long Boots", "Ladies Chelsea Boots", "Ladies Loafers", "Ladies Moccasins", "Ladies Slip-On Shoes", "Ladies Pumps", "Ladies Heels", "High Heels", "Block Heels", "Kitten Heels", "Wedge Heels", "Stiletto Heels", "Ladies Sandals", "Flat Sandals", "Ladies Slippers", "Ladies Flip Flops", "Ladies Khussa", "Ladies Peshawari Sandals", "Ladies Bridal Shoes", "Ladies Party Shoes", "Ladies Ballet Flats", "Ladies Espadrilles", "Baby Shoes", "Baby Sneakers", "Baby Sandals", "Baby Boots", "Baby Slippers", "Baby Socks Shoes", "Kids School Shoes", "Kids Formal Shoes", "Kids Casual Shoes", "Kids Sports Shoes", "Kids Running Shoes", "Kids Sneakers", "Kids Boots", "Kids Sandals", "Kids Slippers", "Kids Flip Flops", "Kids Football Shoes", "Kids Cricket Shoes", "Kids Basketball Shoes", "Kids Hiking Shoes", "Kids Loafers", "Kids Moccasins", "Kids Slip-On Shoes", "School Peshawari Chappal", "School Sandals", "School Sneakers", "School Boots", "School Slippers", "Canvas Shoes", "Mesh Shoes", "Slip Resistant Shoes", "Waterproof Shoes", "Lightweight Shoes", "Walking Sandals", "Sports Sandals", "Beach Sandals", "House Slippers", "Shower Slippers"
-    ];
-
-    // Image Keyword Maps per Category
-    const categoryImages = {
-      grocery: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&q=80",
-      hardware: "https://images.unsplash.com/photo-1581147036324-c17ac41dfa6c?w=400&q=80",
-      electronics: "https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=400&q=80",
-      gents: "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=400&q=80",
-      ladies: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&q=80",
-      kids: "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=400&q=80",
-      shoes: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&q=80"
-    };
-
+    // SVG Image Fallback Engine
     function generateSvgFallback(name) {
       const cleanName = name.replace(/[^a-zA-Z0-9 ]/g, "");
       const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="#0f172a"/><circle cx="200" cy="120" r="45" fill="#10b981" opacity="0.3"/><text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-family="Segoe UI, Arial" font-size="20" font-weight="bold" fill="#ffffff">${cleanName}</text><text x="50%" y="62%" dominant-baseline="middle" text-anchor="middle" font-family="Segoe UI, Arial" font-size="13" font-weight="600" fill="#facc15">ZEE-MART ORIGINAL</text></svg>`;
@@ -443,8 +595,8 @@
           costPrice: cost,
           markupPercent: 25,
           discountPercent: 10,
-          remark: "100% Top Quality Guaranteed",
-          img: categoryImages[categoryKey]
+          remark: "100% Guaranteed Quality",
+          img: getAIImageUrl(item)
         };
       });
     }
@@ -551,6 +703,13 @@
       });
     }
 
+    function filterCategory(cat, btn) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderProducts();
+    }
+
     function toggleModal(id, show) {
       document.getElementById(id).style.display = show ? 'flex' : 'none';
     }
@@ -559,49 +718,47 @@
       document.getElementById('orderItemName').value = itemName;
       document.getElementById('orderItemPrice').value = itemPrice;
       document.getElementById('displayItemName').value = itemName;
-      
-      document.getElementById('summaryPrice').innerText = `PKR ${itemPrice.toLocaleString()}`;
-      document.getElementById('summaryTotal').innerText = `PKR ${(itemPrice + deliveryCharge).toLocaleString()}`;
-      
+      document.getElementById('summaryPrice').innerText = 'PKR ' + itemPrice.toLocaleString();
+      document.getElementById('summaryTotal').innerText = 'PKR ' + (itemPrice + deliveryCharge).toLocaleString();
       toggleModal('codModal', true);
     }
 
-    function filterCategory(cat, btn) {
-      currentCategory = cat;
-      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      renderProducts();
-    }
+    // Instant Search Listener
+    document.getElementById('searchInput').addEventListener('input', renderProducts);
 
-    document.getElementById('codForm').addEventListener('submit', function(e) {
+    // Reviews Form Handler
+    document.getElementById('commentForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      const name = document.getElementById('custFullName').value;
-      const phone = document.getElementById('custPhone').value;
-      const address = document.getElementById('custAddress').value;
-      const item = document.getElementById('orderItemName').value;
-      const price = parseFloat(document.getElementById('orderItemPrice').value);
-      const total = price + deliveryCharge;
-
-      const msg = encodeURIComponent(`NEW COD ORDER PLACED:\n\nProduct: ${item}\nItem Price: PKR ${price}\nDelivery Fee: PKR 300\nTotal Payable: PKR ${total}\n\nCustomer: ${name}\nPhone: ${phone}\nAddress: ${address}`);
-      
-      alert("Order Prepared! Redirecting to WhatsApp...");
-      window.open(`https://wa.me/${userPhone}?text=${msg}`, '_blank');
-      
-      toggleModal('codModal', false);
-      this.reset();
+      const name = document.getElementById('custName').value.trim();
+      const comment = document.getElementById('custComment').value.trim();
+      if(name && comment) {
+        comments.unshift({ name, comment });
+        localStorage.setItem('zeemart_megastore_comments', JSON.stringify(comments));
+        renderComments();
+        this.reset();
+      }
     });
 
+    // Admin Product Add Handler
     document.getElementById('productForm').addEventListener('submit', function(e) {
       e.preventDefault();
+      const name = document.getElementById('pName').value.trim();
+      const category = document.getElementById('pCategory').value;
+      const imgInput = document.getElementById('pImg').value.trim();
+      const remark = document.getElementById('pRemark').value.trim();
+      const costPrice = parseFloat(document.getElementById('pCost').value);
+      const markupPercent = parseFloat(document.getElementById('pMarkup').value);
+      const discountPercent = parseFloat(document.getElementById('pDiscount').value);
+
       const newProduct = {
-        id: "custom_" + Date.now(),
-        name: document.getElementById('pName').value,
-        category: document.getElementById('pCategory').value,
-        img: document.getElementById('pImg').value,
-        remark: document.getElementById('pRemark').value,
-        costPrice: parseFloat(document.getElementById('pCost').value),
-        markupPercent: parseFloat(document.getElementById('pMarkup').value),
-        discountPercent: parseFloat(document.getElementById('pDiscount').value)
+        id: 'custom_' + Date.now(),
+        name,
+        category,
+        costPrice,
+        markupPercent,
+        discountPercent,
+        remark,
+        img: imgInput || getAIImageUrl(name)
       };
 
       products.unshift(newProduct);
@@ -611,26 +768,31 @@
       this.reset();
     });
 
-    document.getElementById('commentForm').addEventListener('submit', function(e) {
+    // WhatsApp Order Dispatcher
+    document.getElementById('codForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      const newC = {
-        name: document.getElementById('custName').value,
-        comment: document.getElementById('custComment').value
-      };
-      comments.unshift(newC);
-      localStorage.setItem('zeemart_megastore_comments', JSON.stringify(comments));
-      renderComments();
+      const name = document.getElementById('orderItemName').value;
+      const price = document.getElementById('orderItemPrice').value;
+      const custName = document.getElementById('custFullName').value;
+      const custPhoneNum = document.getElementById('custPhone').value;
+      const custAddr = document.getElementById('custAddress').value;
+
+      const message = `*NEW COD ORDER - ZEE-MART*\n\n` +
+                      `*Item:* ${name}\n` +
+                      `*Price:* PKR ${price}\n` +
+                      `*Delivery Fee:* PKR 300\n` +
+                      `*Total Amount:* PKR ${parseInt(price) + deliveryCharge}\n\n` +
+                      `*Customer Details:*\n` +
+                      `• Name: ${custName}\n` +
+                      `• Phone: ${custPhoneNum}\n` +
+                      `• Address: ${custAddr}`;
+
+      window.open(`https://wa.me/${userPhone}?text=${encodeURIComponent(message)}`, '_blank');
+      toggleModal('codModal', false);
       this.reset();
     });
 
-    // Debouncing for smooth search performance
-    let searchDebounce;
-    document.getElementById('searchInput').addEventListener('input', function() {
-      clearTimeout(searchDebounce);
-      searchDebounce = setTimeout(renderProducts, 150);
-    });
-
-    // Initial Load
+    // Initialize Store Data
     renderProducts();
     renderComments();
   </script>
