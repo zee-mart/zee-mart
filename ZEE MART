@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZEE mart | Quality Products, Better Life</title>
+<meta name="description" content="ZEE mart - Quality Products, Better Life. Contact us for orders and products.">
+<style>
+:root{
+  --green:#075b3a;
+  --green2:#0b7a4b;
+  --orange:#ff6b00;
+  --light:#f7faf8;
+  --dark:#10251d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--dark);background:var(--light);line-height:1.6}
+header{
+  background:linear-gradient(135deg,var(--green),#063d2a);
+  color:#fff;position:sticky;top:0;z-index:10;
+  box-shadow:0 3px 15px #0002
+}
+.nav{max-width:1100px;margin:auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:28px;font-weight:900;letter-spacing:1px}
+.logo span{color:var(--orange)}
+nav a{color:#fff;text-decoration:none;margin-left:20px;font-weight:700}
+nav a:hover{color:#ffb37d}
+.hero{
+  min-height:72vh;display:flex;align-items:center;
+  background:linear-gradient(135deg,#ffffff 0%,#edf7f1 100%);
+}
+.hero-inner{max-width:1100px;margin:auto;padding:70px 22px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.badge{display:inline-block;background:#e9f6ef;color:var(--green);padding:8px 14px;border-radius:30px;font-weight:700;margin-bottom:18px}
+h1{font-size:clamp(44px,7vw,78px);line-height:1;color:var(--green)}
+h1 span{color:var(--orange)}
+.hero p{font-size:20px;margin:20px 0;color:#496057}
+.btn{
+  display:inline-block;padding:13px 22px;border-radius:30px;
+  background:var(--orange);color:#fff;text-decoration:none;font-weight:800;margin:6px 8px 6px 0
+}
+.btn.alt{background:var(--green)}
+.card{
+  background:#fff;border-radius:28px;padding:35px;text-align:center;
+  box-shadow:0 15px 40px #0b4d3518;border:1px solid #e2eee8
+}
+.cart{font-size:110px;margin-bottom:10px}
+section{padding:70px 22px}
+.container{max-width:1100px;margin:auto}
+.title{text-align:center;font-size:36px;color:var(--green);margin-bottom:12px}
+.subtitle{text-align:center;color:#65766f;margin-bottom:35px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.feature{background:#fff;padding:28px;border-radius:20px;border:1px solid #e2eee8;text-align:center}
+.feature .icon{font-size:40px;margin-bottom:12px}
+.feature h3{color:var(--green);margin-bottom:7px}
+.contact{background:var(--green);color:#fff}
+.contact .title{color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.contact-card{background:#ffffff12;border:1px solid #ffffff25;border-radius:20px;padding:25px}
+.contact-card a{color:#fff;text-decoration:none}
+.socials{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.socials a{background:#fff;color:var(--green);padding:10px 15px;border-radius:25px;font-weight:700}
+footer{background:#052e21;color:#dcebe4;text-align:center;padding:22px}
+@media(max-width:800px){
+  .hero-inner,.contact-grid{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+  nav a{margin-left:10px;font-size:14px}
+  .logo{font-size:23px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">ZEE <span>mart</span></div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="badge">🛒 Quality Products, Better Life</div>
+      <h1>ZEE <span>mart</span></h1>
+      <p>Your simple online shopping place. Contact us for products, prices and orders.</p>
+      <a class="btn" href="tel:+923336987944">📞 Call Now</a>
+      <a class="btn alt" href="https://wa.me/92336987944" target="_blank">💬 WhatsApp</a>
+    </div>
+    <div class="card">
+      <div class="cart">🛒</div>
+      <h2>Welcome to ZEE mart</h2>
+      <p>Quality Products, Better Life</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h2 class="title">Why Choose ZEE mart?</h2>
+    <p class="subtitle">Easy contact • Friendly service • Quality products</p>
+    <div class="grid">
+      <div class="feature"><div class="icon">⭐</div><h3>Quality</h3><p>We focus on providing good quality products.</p></div>
+      <div class="feature"><div class="icon">🚚</div><h3>Easy Ordering</h3><p>Contact us directly for product details and orders.</p></div>
+      <div class="feature"><div class="icon">🤝</div><h3>Customer Service</h3><p>We are available through phone and social media.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <h2 class="title">Contact ZEE mart</h2>
+    <p class="subtitle" style="color:#cfe3da">Get in touch with us</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>📞 Mobile</h3>
+        <p><a href="tel:+923336987944">+92 333 6987944</a></p>
+        <p><a href="tel:+923119426089">+92 311 9426089</a></p>
+        <h3 style="margin-top:18px">✉️ Email</h3>
+        <p><a href="mailto:zohaibejaz098@gmail.com">zohaibejaz098@gmail.com</a></p>
+      </div>
+      <div class="contact-card">
+        <h3>🌐 Social Media</h3>
+        <div class="socials">
+          <a href="https://www.tiktok.com/@zohaibejaz098" target="_blank">TikTok</a>
+          <a href="https://www.facebook.com/Zohaibejaz" target="_blank">Facebook</a>
+          <a href="https://www.instagram.com/zohaib_ejaz1" target="_blank">Instagram</a>
+          <a href="https://www.snapchat.com/add/Zohaibejaz098" target="_blank">Snapchat</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  © 2026 ZEE mart — Quality Products, Better Life
+</footer>
+</body>
+</html>
