@@ -1,7 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <!-- Clean Text Logo for Zee-Mart (Size: ~2 KB) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ZEE-MART | Online Shopping & Food Delivery</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    body { background-color: #f4f6f8; color: #333; padding-bottom: 40px; }
+    
+    /* Header & Branding */
+    header { background: #1a252f; color: white; padding: 20px; text-align: center; }
+    header h1 { font-size: 2.2rem; color: #e74c3c; }
+    header h1 span { color: #f39c12; }
+    
+    .container { max-width: 1100px; margin: 20px auto; padding: 0 15px; }
+
+    /* Search Bar Feature */
+    .search-container { margin: 20px 0; text-align: center; position: relative; }
+    .search-container input {
+      width: 100%; max-width: 600px; padding: 14px 20px; font-size: 1rem;
+      border: 2px solid #3498db; border-radius: 25px; outline: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: 0.3s;
+    }
+    .search-container input:focus { border-color: #e74c3c; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+
+    /* Products Grid */
+    .product-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px; margin-top: 20px;
+    }
+    .product-card {
+      background: white; border-radius: 10px; overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center;
+      padding: 15px; transition: transform 0.2s;
+    }
+    .product-card:hover { transform: translateY(-5px); }
+    .product-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; }
+    .product-card span.category { font-size: 0.8rem; background: #e8f4f8; color: #2980b9; padding: 3px 8px; border-radius: 12px; }
+    .product-card h3 { font-size: 1.1rem; margin: 10px 0 5px; color: #2c3e50; }
+    .product-card .price { font-weight: bold; color: #27ae60; margin-bottom: 12px; }
+    
+    .btn-buy {
+      display: inline-block; background: #25d366; color: white;
+      padding: 10px 15px; text-decoration: none; border-radius: 5px;
+      font-weight: bold; transition: background 0.2s;
+    }
+    .btn-buy:hover { background: #1eb954; }
+
+    #noResults { display: none; text-align: center; color: #7f8c8d; font-size: 1.2rem; margin-top: 30px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ZEE<span>-MART</span></h1>
+    <p>Online Shopping & Food Delivery</p>
+  </header>
+
+  <div class="container">
+    
+    <!-- Active Live Search Feature -->
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="🔍 Search any product by name (e.g. Pizza, Headphones)..." />
+    </div>
+
+    <!-- Products Container -->
+    <div class="product-grid" id="productGrid">
+
+      <!-- Product 1 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400" alt="Cheesy Pizza">
+        <br><br>
+        <span class="category">Food</span>
+        <h3>Cheesy Pizza & Fast Food</h3>
+        <div class="price">Rs. 1,200</div>
+        <a href="https://wa.me/92336987944?text=Hi,%20I%20want%20to%20buy%20Cheesy%20Pizza" target="_blank" class="btn-buy">💬 WhatsApp Buy</a>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="Bluetooth Headphones">
+        <br><br>
+        <span class="category">Electronics</span>
+        <h3>Wireless Bluetooth Headphones</h3>
+        <div class="price">Rs. 2,500</div>
+        <a href="https://wa.me/92336987944?text=Hi,%20I%20want%20to%20buy%20Wireless%20Bluetooth%20Headphones" target="_blank" class="btn-buy">💬 WhatsApp Buy</a>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="Smart Watch">
+        <br><br>
+        <span class="category">Electronics</span>
+        <h3>Smart Fitness Watch</h3>
+        <div class="price">Rs. 3,800</div>
+        <a href="https://wa.me/92336987944?text=Hi,%20I%20want%20to%20buy%20Smart%20Fitness%20Watch" target="_blank" class="btn-buy">💬 WhatsApp Buy</a>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400" alt="Zinger Burger">
+        <br><br>
+        <span class="category">Food</span>
+        <h3>Crispy Zinger Burger</h3>
+        <div class="price">Rs. 550</div>
+        <a href="https://wa.me/92336987944?text=Hi,%20I%20want%20to%20buy%20Crispy%20Zinger%20Burger" target="_blank" class="btn-buy">💬 WhatsApp Buy</a>
+      </div>
+
+    </div>
+
+    <div id="noResults">No products found matching your search.</div>
+
+  </div>
+
+  <script>
+    // Live Auto-Filter Search Bug Fix Script
+    const searchInput = document.getElementById('searchInput');
+    const productGrid = document.getElementById('productGrid');
+    const productCards = productGrid.getElementsByClassName('product-card');
+    const noResults = document.getElementById('noResults');
+
+    searchInput.addEventListener('input', function() {
+      const filterValue = searchInput.value.toLowerCase().trim();
+      let hasMatches = false;
+
+      Array.from(productCards).forEach(card => {
+        const title = card.getElementsByTagName('h3')[0].textContent.toLowerCase();
+        
+        if (title.includes(filterValue)) {
+          card.style.display = 'block';
+          hasMatches = true;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Show/Hide "No Results" message
+      if (hasMatches) {
+        noResults.style.display = 'none';
+      } else {
+        noResults.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html> <!-- Clean Text Logo for Zee-Mart (Size: ~2 KB) -->
 <div style="text-align: center; padding: 15px 0;">
   <h1 style="color: #ffffff; font-size: 36px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; margin: 0; font-family: 'Arial Black', sans-serif;">
     ZEE<span style="color: #facc15;">-MART</span>
