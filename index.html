@@ -1,27 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyBAN9IiZuSG8nHD9yXdKi_Ak39wJDIklBI",
-  authDomain: "zee-mart-store.firebaseapp.com",
-  projectId: "zee-mart-store",
-  storageBucket: "zee-mart-store.firebasestorage.app",
-  messagingSenderId: "816178502550",
-  appId: "1:816178502550:web:b2578e5fe91b281ed79bb7",
-  measurementId: "G-TBJN3MXLSJ"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);  <meta charset="UTF-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZEE-MART | Official Supermarket & Hardware Store</title>
   
@@ -44,20 +24,9 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
       --bg-light: #f8fafc;
     }
 
-    * { 
-      box-sizing: border-box; 
-      margin: 0; 
-      padding: 0; 
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
-    }
-    
-    body { 
-      background: var(--bg-light); 
-      color: #333; 
-      padding-bottom: 20px; 
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    body { background: var(--bg-light); color: #333; padding-bottom: 20px; }
 
-    /* Top Announcement Bar */
     .social-bar {
       background: var(--dark);
       color: white;
@@ -69,16 +38,8 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
       gap: 10px;
       font-size: 13px;
     }
-    .contact-info { 
-      display: flex; 
-      gap: 15px; 
-      flex-wrap: wrap; 
-    }
-    .social-bar a { 
-      color: #38bdf8; 
-      text-decoration: none; 
-      font-weight: bold; 
-    }
+    .contact-info { display: flex; gap: 15px; flex-wrap: wrap; }
+    .social-bar a { color: #38bdf8; text-decoration: none; font-weight: bold; }
 
     .btn-admin {
       background: var(--blue);
@@ -92,7 +53,6 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
     }
     .btn-admin:hover { opacity: 0.9; }
 
-    /* Main Header */
     header {
       background: var(--primary);
       padding: 25px 20px;
@@ -103,22 +63,11 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
       z-index: 900;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-    .brand-logo h1 { 
-      font-size: 36px; 
-      font-weight: 800; 
-      letter-spacing: 1px; 
-    }
+    .brand-logo h1 { font-size: 36px; font-weight: 800; letter-spacing: 1px; }
     .brand-logo h1 span { color: var(--accent); }
-    .brand-tagline { 
-      font-size: 14px; 
-      color: #ecfdf5; 
-      margin-bottom: 18px; 
-    }
+    .brand-tagline { font-size: 14px; color: #ecfdf5; margin-bottom: 18px; }
 
-    .search-box { 
-      max-width: 650px; 
-      margin: 0 auto; 
-    }
+    .search-box { max-width: 650px; margin: 0 auto; }
     .search-box input {
       width: 100%;
       padding: 14px 22px;
@@ -129,25 +78,11 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       transition: 0.3s;
     }
-    .search-box input:focus { 
-      box-shadow: 0 0 0 4px rgba(250, 204, 21, 0.5); 
-    }
+    .search-box input:focus { box-shadow: 0 0 0 4px rgba(250, 204, 21, 0.5); }
 
-    /* Main Container & Categories */
-    .container { 
-      max-width: 1200px; 
-      margin: 30px auto; 
-      padding: 0 20px; 
-    }
+    .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
 
-    .categories { 
-      display: flex; 
-      gap: 10px; 
-      overflow-x: auto; 
-      padding-bottom: 15px; 
-      margin-bottom: 20px; 
-      scrollbar-width: thin; 
-    }
+    .categories { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 15px; margin-bottom: 20px; scrollbar-width: thin; }
     .cat-btn {
       background: white;
       border: 1px solid #cbd5e1;
@@ -160,25 +95,11 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
       transition: 0.2s;
     }
     .cat-btn:hover { background: #f1f5f9; }
-    .cat-btn.active { 
-      background: var(--primary); 
-      color: white; 
-      border-color: var(--primary); 
-    }
+    .cat-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
 
-    .catalog-count { 
-      font-size: 14px; 
-      color: #64748b; 
-      margin-bottom: 15px; 
-      font-weight: 600; 
-    }
+    .catalog-count { font-size: 14px; color: #64748b; margin-bottom: 15px; font-weight: 600; }
 
-    /* Products Grid */
-    .product-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
-      gap: 20px; 
-    }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
     .product-card {
       background: white;
       border-radius: 12px;
@@ -191,24 +112,10 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
       justify-content: space-between;
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .product-card:hover { 
-      transform: translateY(-3px); 
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08); 
-    }
+    .product-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
 
-    .img-wrapper {
-      width: 100%;
-      height: 180px;
-      background: #f1f5f9;
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 12px;
-    }
-    .product-img { 
-      width: 100%; 
-      height: 100%; 
-      object-fit: cover; 
-    }
+    .img-wrapper { width: 100%; height: 180px; background: #f1f5f9; border-radius: 8px; overflow: hidden; margin-bottom: 12px; }
+    .product-img { width: 100%; height: 100%; object-fit: cover; }
 
     .discount-badge {
       position: absolute;
@@ -223,79 +130,21 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
       z-index: 2;
     }
 
-    .product-cat { 
-      font-size: 11px; 
-      color: #94a3b8; 
-      text-transform: uppercase; 
-      font-weight: bold; 
-    }
-    .product-title { 
-      font-size: 15px; 
-      font-weight: bold; 
-      margin: 4px 0 6px 0; 
-      color: #0f172a; 
-      line-height: 1.3; 
-    }
+    .product-cat { font-size: 11px; color: #94a3b8; text-transform: uppercase; font-weight: bold; }
+    .product-title { font-size: 15px; font-weight: bold; margin: 4px 0 6px 0; color: #0f172a; line-height: 1.3; }
 
-    .policy-tag { 
-      font-size: 11px; 
-      color: var(--primary-dark); 
-      font-weight: 600; 
-      margin-bottom: 2px; 
-    }
-    .quality-remark { 
-      font-size: 11px; 
-      color: #64748b; 
-      font-style: italic; 
-      margin-bottom: 8px; 
-    }
+    .policy-tag { font-size: 11px; color: var(--primary-dark); font-weight: 600; margin-bottom: 2px; }
+    .quality-remark { font-size: 11px; color: #64748b; font-style: italic; margin-bottom: 8px; }
 
     .price-box { margin-bottom: 6px; }
-    .orig-price { 
-      text-decoration: line-through; 
-      color: #94a3b8; 
-      font-size: 13px; 
-      margin-right: 6px; 
-    }
-    .final-price { 
-      color: var(--primary-dark); 
-      font-size: 18px; 
-      font-weight: bold; 
-    }
-    .delivery-tag { 
-      font-size: 11px; 
-      color: #ea580c; 
-      font-weight: 700; 
-      margin-bottom: 12px; 
-    }
+    .orig-price { text-decoration: line-through; color: #94a3b8; font-size: 13px; margin-right: 6px; }
+    .final-price { color: var(--primary-dark); font-size: 18px; font-weight: bold; }
+    .delivery-tag { font-size: 11px; color: #ea580c; font-weight: 700; margin-bottom: 12px; }
 
-    .btn-group { 
-      display: flex; 
-      flex-direction: column; 
-      gap: 6px; 
-    }
-    .btn-cod {
-      background: #f97316;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .btn-wa {
-      background: #25d366;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 13px;
-    }
+    .btn-group { display: flex; flex-direction: column; gap: 6px; }
+    .btn-cod { background: #f97316; color: white; text-align: center; padding: 10px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+    .btn-wa { background: #25d366; color: white; text-align: center; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 13px; }
 
-    /* Modals & Popups */
     .modal-overlay {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -316,116 +165,31 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
       max-height: 90vh;
       overflow-y: auto;
     }
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 15px;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 10px;
-    }
-    .close-modal { 
-      cursor: pointer; 
-      font-size: 24px; 
-      color: #94a3b8; 
-      border: none; 
-      background: none; 
-    }
+    .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; }
+    .close-modal { cursor: pointer; font-size: 24px; color: #94a3b8; border: none; background: none; }
 
     .form-group { margin-bottom: 14px; }
-    .form-group label { 
-      display: block; 
-      font-size: 13px; 
-      font-weight: bold; 
-      margin-bottom: 4px; 
-      color: #334155; 
-    }
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      font-size: 14px;
-      outline: none;
-    }
+    .form-group label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 4px; color: #334155; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; outline: none; }
     .form-group input:focus { border-color: var(--primary); }
 
-    .order-summary { 
-      background: #fff7ed; 
-      padding: 12px; 
-      border-radius: 6px; 
-      margin-bottom: 14px; 
-      font-size: 13px; 
-    }
-    .total-text { 
-      color: #c2410c; 
-      font-size: 16px; 
-      margin-top: 4px; 
-    }
+    .order-summary { background: #fff7ed; padding: 12px; border-radius: 6px; margin-bottom: 14px; font-size: 13px; }
+    .total-text { color: #c2410c; font-size: 16px; margin-top: 4px; }
 
-    .btn-submit {
-      width: 100%;
-      background: var(--primary);
-      color: white;
-      padding: 12px;
-      border: none;
-      border-radius: 6px;
-      font-size: 15px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+    .btn-submit { width: 100%; background: var(--primary); color: white; padding: 12px; border: none; border-radius: 6px; font-size: 15px; font-weight: bold; cursor: pointer; }
 
-    /* Reviews Section */
-    .review-section { 
-      margin-top: 40px; 
-      background: white; 
-      padding: 25px; 
-      border-radius: 12px; 
-      border: 1px solid #e2e8f0; 
-    }
-    .review-section h2 { 
-      font-size: 18px; 
-      margin-bottom: 15px; 
-      color: var(--dark); 
-    }
-    .review-card { 
-      background: #f8fafc; 
-      padding: 12px 16px; 
-      border-radius: 8px; 
-      margin-bottom: 10px; 
-      border-left: 4px solid var(--primary); 
-    }
-    .review-header { 
-      display: flex; 
-      justify-content: space-between; 
-      font-weight: bold; 
-      font-size: 13px; 
-    }
-    .review-comment { 
-      font-size: 13px; 
-      color: #475569; 
-      margin-top: 4px; 
-    }
+    .review-section { margin-top: 40px; background: white; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0; }
+    .review-section h2 { font-size: 18px; margin-bottom: 15px; color: var(--dark); }
+    .review-card { background: #f8fafc; padding: 12px 16px; border-radius: 8px; margin-bottom: 10px; border-left: 4px solid var(--primary); }
+    .review-header { display: flex; justify-content: space-between; font-weight: bold; font-size: 13px; }
+    .review-comment { font-size: 13px; color: #475569; margin-top: 4px; }
 
-    #noResults { 
-      display: none; 
-      text-align: center; 
-      color: #94a3b8; 
-      font-size: 1.2rem; 
-      margin-top: 40px; 
-    }
-
-    footer { 
-      text-align: center; 
-      margin-top: 40px; 
-      font-size: 12px; 
-      color: #94a3b8; 
-    }
+    #noResults { display: none; text-align: center; color: #94a3b8; font-size: 1.2rem; margin-top: 40px; }
+    footer { text-align: center; margin-top: 40px; font-size: 12px; color: #94a3b8; }
   </style>
 </head>
 <body>
 
-  <!-- Top Contact / Admin Bar -->
   <div class="social-bar">
     <div class="contact-info">
       <span><i class="fa-solid fa-envelope"></i> <a href="mailto:zohaibejaz098@gmail.com">zohaibejaz098@gmail.com</a></span>
@@ -434,7 +198,6 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
     <button class="btn-admin" onclick="toggleModal('adminModal', true)"><i class="fa-solid fa-gear"></i> Admin Panel</button>
   </div>
 
-  <!-- Header & Search -->
   <header>
     <div class="brand-logo">
       <h1>ZEE<span>-MART</span></h1>
@@ -445,10 +208,7 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
     </div>
   </header>
 
-  <!-- Main Container -->
   <div class="container">
-    
-    <!-- Category Filter Buttons -->
     <div class="categories" id="categoryContainer">
       <button class="cat-btn active" onclick="filterCategory('all', this)">All Items</button>
       <button class="cat-btn" onclick="filterCategory('grocery', this)">🛒 Grocery & Staples</button>
@@ -462,11 +222,9 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
 
     <div class="catalog-count" id="catalogCount">Loading store items...</div>
 
-    <!-- Dynamic Product Grid -->
     <div class="product-grid" id="productGrid"></div>
     <div id="noResults"><i class="fa-solid fa-magnifying-glass"></i> No products found matching your search.</div>
 
-    <!-- Customer Reviews Section -->
     <div class="review-section">
       <h2>💬 Customer Remarks & Store Reviews</h2>
       <form id="commentForm">
@@ -478,12 +236,10 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
         </div>
         <button type="submit" class="btn-submit" style="width: auto; padding: 10px 24px;">Post Review</button>
       </form>
-
       <div id="commentsList" style="margin-top: 20px;"></div>
     </div>
   </div>
 
-  <!-- Cash on Delivery Modal Popup -->
   <div class="modal-overlay" id="codModal">
     <div class="modal-content">
       <div class="modal-header">
@@ -523,7 +279,6 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
     </div>
   </div>
 
-  <!-- Admin Panel Modal Popup -->
   <div class="modal-overlay" id="adminModal">
     <div class="modal-content">
       <div class="modal-header">
@@ -574,17 +329,34 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
     </div>
   </div>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2026 ZEE-MART Megastore. All Rights Reserved. Designed for Superfast Online Shopping.</p>
   </footer>
 
-  <!-- Embedded JavaScript Engine -->
+  <!-- Firebase Integration Engine -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBAN9IiZuSG8nHD9yXdKi_Ak39wJDIklBI",
+      authDomain: "zee-mart-store.firebaseapp.com",
+      projectId: "zee-mart-store",
+      storageBucket: "zee-mart-store.firebasestorage.app",
+      messagingSenderId: "816178502550",
+      appId: "1:816178502550:web:b2578e5fe91b281ed79bb7",
+      measurementId: "G-TBJN3MXLSJ"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+
+  <!-- Store Logic Script -->
   <script>
     const userPhone = "92336987944";
     const deliveryCharge = 300;
 
-    // Items List
     const rawGrocery = ["Aam Papad", "Aata", "Almonds", "Anardana", "Apple Jam", "Basmati Rice", "Black Tea", "Bread", "Butter", "Chicken Nuggets", "Chocolate", "Coffee", "Eggs", "Honey", "Milk", "Olive Oil", "Red Chili Powder", "Sugar", "Yogurt"];
     const rawHardware = ["Allen Key Set", "Anchor Bolt", "Bearing", "Cable Tie", "Drill Machine", "Hammer", "Hand Saw", "Pliers", "Screwdriver", "Toolbox", "Wrench", "Safety Helmet", "Duct Tape", "Grinder"];
     const rawElectronics = ["LED Bulb", "Ceiling Fan", "Extension Board", "Mobile Charger", "Fast Charger", "USB Cable", "Bluetooth Speaker", "Earphones", "Smart TV Stick", "CCTV Camera", "Wi-Fi Router", "Electric Kettle"];
@@ -593,12 +365,10 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
     const rawKids = ["Baby Bodysuit", "Baby Romper", "Baby Frock", "Baby Sweater", "Kids Jeans", "Kids T-Shirt", "Kids Jacket", "School Uniform Shirt", "Kids Toys"];
     const rawShoes = ["Men Formal Shoes", "Men Sports Shoes", "Men Joggers", "Men Sneakers", "Men Peshawari Chappal", "Ladies Heels", "Ladies Sandals", "Ladies Khussa", "Baby Shoes", "Kids School Shoes"];
 
-    // Dynamic AI Image Generator
     function getAIImageUrl(productName) {
       return `https://pollinations.ai/p/${encodeURIComponent(productName)}?width=400&height=300&seed=42&nologo=true`;
     }
 
-    // SVG Image Fallback Engine
     function generateSvgFallback(name) {
       const cleanName = name.replace(/[^a-zA-Z0-9 ]/g, "");
       const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="#0f172a"/><circle cx="200" cy="120" r="45" fill="#10b981" opacity="0.3"/><text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-family="Segoe UI, Arial" font-size="20" font-weight="bold" fill="#ffffff">${cleanName}</text><text x="50%" y="62%" dominant-baseline="middle" text-anchor="middle" font-family="Segoe UI, Arial" font-size="13" font-weight="600" fill="#facc15">ZEE-MART ORIGINAL</text></svg>`;
@@ -658,7 +428,6 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
       
       grid.innerHTML = '';
       let matches = 0;
-
       const fragment = document.createDocumentFragment();
 
       products.forEach(product => {
@@ -743,10 +512,8 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
       toggleModal('codModal', true);
     }
 
-    // Instant Search Listener
     document.getElementById('searchInput').addEventListener('input', renderProducts);
 
-    // Reviews Form Handler
     document.getElementById('commentForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const name = document.getElementById('custName').value.trim();
@@ -759,7 +526,6 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
       }
     });
 
-    // Admin Product Add Handler
     document.getElementById('productForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const name = document.getElementById('pName').value.trim();
@@ -788,7 +554,6 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
       this.reset();
     });
 
-    // WhatsApp Order Dispatcher
     document.getElementById('codForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const name = document.getElementById('orderItemName').value;
@@ -812,7 +577,6 @@ const analytics = getAnalytics(app);  <meta charset="UTF-8" />
       this.reset();
     });
 
-    // Initialize Store Data
     renderProducts();
     renderComments();
   </script>
