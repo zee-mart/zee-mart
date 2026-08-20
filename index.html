@@ -57,7 +57,21 @@ footer{text-align:center;color:#94a3b8;font-size:12px;margin-top:35px}
 @media print{body>*{display:none!important}.overlay{display:block!important;position:static;background:none;padding:0}.modal{max-width:none;box-shadow:none;padding:0}.modal>*:not(.invoice-wrap){display:none!important}.invoice-actions{display:none!important}}
 </style>
 </head>
-<body>
+<script>
+  document.getElementById("adminLoginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      var pass = document.getElementById("adminPassword").value;
+      
+      if (pass === "7266") { 
+          alert("پاس ورڈ درست ہے! ایڈمن لاگ ان ہو گیا۔");
+          // یہاں آپ کے ایڈمن ڈیش بورڈ کو اوپن کرنے کا کوڈ آئے گا
+      } else {
+          alert("غلط پاس ورڈ! دوبارہ کوشش کریں۔");
+      }
+  });
+</script>
+  <body>
 
 <div class="topbar">
   <div class="contact">
