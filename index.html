@@ -1,584 +1,492 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZEE-MART | Official Supermarket & Hardware Store</title>
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="ZEE-MART Megastore - Buy Groceries, Hardware Tools, Electronics, Apparel, and Footwear with Cash on Delivery in Pakistan." />
-  <meta name="keywords" content="ZEE-MART, online shopping, hardware tools, grocery, electronics, COD Pakistan" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ZEE-MART | Official Online Supermarket & Hardware Store</title>
+<meta name="description" content="ZEE-MART Official Online Store — Grocery, Hardware, Electronics, Apparel and Footwear with Cash on Delivery across Pakistan.">
+<meta name="keywords" content="ZEE-MART, supermarket Pakistan, hardware store, grocery online, electronics, COD Pakistan">
+<meta name="theme-color" content="#10b981">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<style>
+:root{--primary:#10b981;--primary-dark:#047857;--accent:#facc15;--dark:#0f172a;--blue:#2563eb;--orange:#f97316;--wa:#25d366;--bg:#f8fafc;--border:#e2e8f0}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Segoe UI,system-ui,-apple-system,sans-serif}
+body{background:var(--bg);color:#334155;padding-bottom:25px}
+button,input,select,textarea{font:inherit}
+.topbar{background:var(--dark);color:#fff;padding:9px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:13px}
+.topbar a{color:#7dd3fc;text-decoration:none}.contact{display:flex;gap:15px;flex-wrap:wrap}.socials{display:flex;gap:9px;align-items:center}.socials a{width:32px;height:32px;display:grid;place-items:center;border-radius:50%;background:#1e293b;color:#fff!important;transition:.2s;text-decoration:none}.socials a:hover{transform:translateY(-2px);background:var(--primary)}
+.btn-admin{background:var(--blue);color:#fff;border:0;padding:7px 13px;border-radius:6px;cursor:pointer;font-weight:700}
+header{background:linear-gradient(135deg,#10b981,#059669);padding:24px 20px;text-align:center;color:#fff;position:sticky;top:0;z-index:900;box-shadow:0 4px 14px #0002}
+.brand h1{font-size:38px;font-weight:900;letter-spacing:1px}.brand h1 span{color:var(--accent)}.tagline{font-size:14px;color:#ecfdf5;margin:4px 0 18px}
+.search{max-width:700px;margin:auto;position:relative}.search input{width:100%;padding:14px 45px 14px 20px;border:0;border-radius:30px;outline:0;box-shadow:0 4px 14px #0003;font-size:16px}.search i{position:absolute;right:19px;top:14px;color:#64748b}
+.container{max-width:1250px;margin:28px auto;padding:0 18px}.categories{display:flex;gap:9px;overflow-x:auto;padding-bottom:12px;margin-bottom:15px}.cat{white-space:nowrap;background:#fff;border:1px solid #cbd5e1;padding:8px 17px;border-radius:22px;cursor:pointer;font-weight:700;color:#475569}.cat.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.count{font-size:14px;color:#64748b;margin-bottom:15px;font-weight:700}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:18px}
+.card{background:#fff;border:1px solid var(--border);border-radius:13px;padding:14px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 3px 10px #00000009;transition:.2s}.card:hover{transform:translateY(-3px);box-shadow:0 9px 22px #00000012}
+.pic{height:180px;background:#f1f5f9;border-radius:9px;overflow:hidden;margin-bottom:11px}.pic img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;background:#ef4444;color:#fff;padding:4px 8px;border-radius:12px;font-size:11px;font-weight:800;z-index:2}.card-top{position:relative}
+.cat-name{font-size:10px;text-transform:uppercase;color:#94a3b8;font-weight:800}.title{font-size:15px;color:#0f172a;margin:4px 0 6px;line-height:1.3}.quality{font-size:11px;color:#64748b;font-style:italic;margin:3px 0 7px}.return{font-size:11px;color:var(--primary-dark);font-weight:700}
+.price{margin:6px 0}.old{text-decoration:line-through;color:#94a3b8;font-size:13px;margin-right:6px}.new{font-size:18px;color:var(--primary-dark);font-weight:900}.delivery{font-size:11px;color:#ea580c;font-weight:800;margin-bottom:10px}
+.actions{display:flex;flex-direction:column;gap:6px}.actions button,.actions a{border:0;border-radius:6px;padding:10px;text-align:center;font-weight:800;cursor:pointer;text-decoration:none}.buy{background:var(--orange);color:#fff}.wa{background:var(--wa);color:#fff}
+.section{margin-top:35px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:22px}.section h2{color:var(--dark);font-size:19px;margin-bottom:15px}
+.form-group{margin-bottom:13px}.form-group label{display:block;font-size:13px;font-weight:800;margin-bottom:5px}.form-group input,.form-group textarea,.form-group select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:6px;outline:0}.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--primary)}
+.btn{border:0;border-radius:7px;padding:11px 18px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer}.review{background:#f8fafc;padding:12px 15px;border-left:4px solid var(--primary);border-radius:7px;margin-top:9px;font-size:13px}.review-head{display:flex;justify-content:space-between;font-weight:800}.review-text{color:#475569;margin-top:4px}
+.overlay{position:fixed;inset:0;background:#0009;display:none;align-items:center;justify-content:center;z-index:2000;padding:15px}.modal{background:#fff;width:100%;max-width:540px;border-radius:12px;padding:22px;max-height:94vh;overflow:auto}.modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:10px;margin-bottom:15px}.close{border:0;background:none;font-size:25px;color:#94a3b8;cursor:pointer}
+.summary{background:#fff7ed;border-radius:7px;padding:12px;font-size:13px;margin:12px 0}.total{font-size:17px;color:#c2410c;margin-top:6px}.qty-row{display:flex;gap:10px;align-items:end}.qty-row .form-group{flex:1}
+.invoice{font-family:Arial,sans-serif;background:#fff;color:#111}.invoice-head{display:flex;justify-content:space-between;gap:20px;border-bottom:3px solid #10b981;padding-bottom:12px}.invoice-brand{font-size:27px;font-weight:900}.invoice-brand span{color:#059669}.invoice-meta{text-align:right;font-size:12px;color:#475569}.invoice table{width:100%;border-collapse:collapse;margin-top:18px}.invoice th,.invoice td{border:1px solid #ddd;padding:9px;text-align:left;font-size:13px}.invoice th{background:#f1f5f9}.invoice-total{margin-left:auto;width:260px;margin-top:14px}.invoice-total div{display:flex;justify-content:space-between;padding:4px}.invoice-total .grand{border-top:2px solid #111;margin-top:5px;padding-top:8px;font-weight:900;font-size:17px}.invoice-note{margin-top:18px;font-size:11px;color:#64748b}
+.invoice-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.invoice-actions button{padding:10px 14px;border:0;border-radius:6px;cursor:pointer;font-weight:800}.print{background:#0f172a;color:#fff}.invoice-wa{background:#25d366;color:#fff}
 
-  <!-- Embedded CSS Styles -->
-  <style>
-    :root {
-      --primary: #10b981;
-      --primary-dark: #059669;
-      --accent: #facc15;
-      --dark: #0f172a;
-      --badge: #ef4444;
-      --blue: #3b82f6;
-      --bg-light: #f8fafc;
-    }
+.location-search{background:#fff;border:1px solid var(--border);border-radius:12px;padding:15px;margin:0 0 18px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.location-search .loc-input{flex:1;min-width:230px;padding:11px 13px;border:1px solid #cbd5e1;border-radius:7px;outline:0}
+.location-search .loc-btn{background:#0f172a;color:#fff;border:0;border-radius:7px;padding:11px 15px;font-weight:800;cursor:pointer}
+.suggestion-box{display:none;background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:18px}
+.suggestion-box h3{font-size:16px;color:var(--dark);margin-bottom:12px}
+.variant-list{display:flex;gap:8px;flex-wrap:wrap}
+.variant{background:#f1f5f9;border:1px solid #cbd5e1;border-radius:18px;padding:7px 12px;cursor:pointer;font-weight:700;color:#334155}
+.variant:hover{background:#d1fae5;border-color:#10b981}
+.hotel-box{display:none;background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:20px}
+.hotel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.hotel-card{border:1px solid #e2e8f0;border-radius:8px;padding:11px;background:#f8fafc}
+.hotel-card b{display:block;color:#0f172a;margin-bottom:4px}.hotel-card span{font-size:12px;color:#64748b}
+.hotel-card a{display:inline-block;margin-top:7px;color:#2563eb;font-size:12px;font-weight:800;text-decoration:none}
+.admin-status{font-size:12px;color:#64748b;background:#f8fafc;border-radius:7px;padding:9px;margin-bottom:12px}
 
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
-    body { background: var(--bg-light); color: #333; padding-bottom: 20px; }
-
-    .social-bar {
-      background: var(--dark);
-      color: white;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: 13px;
-    }
-    .contact-info { display: flex; gap: 15px; flex-wrap: wrap; }
-    .social-bar a { color: #38bdf8; text-decoration: none; font-weight: bold; }
-
-    .btn-admin {
-      background: var(--blue);
-      color: white;
-      border: none;
-      padding: 6px 14px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: 0.2s;
-    }
-    .btn-admin:hover { opacity: 0.9; }
-
-    header {
-      background: var(--primary);
-      padding: 25px 20px;
-      text-align: center;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 900;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    .brand-logo h1 { font-size: 36px; font-weight: 800; letter-spacing: 1px; }
-    .brand-logo h1 span { color: var(--accent); }
-    .brand-tagline { font-size: 14px; color: #ecfdf5; margin-bottom: 18px; }
-
-    .search-box { max-width: 650px; margin: 0 auto; }
-    .search-box input {
-      width: 100%;
-      padding: 14px 22px;
-      border: none;
-      border-radius: 30px;
-      font-size: 16px;
-      outline: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: 0.3s;
-    }
-    .search-box input:focus { box-shadow: 0 0 0 4px rgba(250, 204, 21, 0.5); }
-
-    .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
-
-    .categories { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 15px; margin-bottom: 20px; scrollbar-width: thin; }
-    .cat-btn {
-      background: white;
-      border: 1px solid #cbd5e1;
-      padding: 8px 18px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: 600;
-      color: #475569;
-      white-space: nowrap;
-      transition: 0.2s;
-    }
-    .cat-btn:hover { background: #f1f5f9; }
-    .cat-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
-
-    .catalog-count { font-size: 14px; color: #64748b; margin-bottom: 15px; font-weight: 600; }
-
-    .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
-    .product-card {
-      background: white;
-      border-radius: 12px;
-      padding: 15px;
-      position: relative;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-      border: 1px solid #e2e8f0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .product-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
-
-    .img-wrapper { width: 100%; height: 180px; background: #f1f5f9; border-radius: 8px; overflow: hidden; margin-bottom: 12px; }
-    .product-img { width: 100%; height: 100%; object-fit: cover; }
-
-    .discount-badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: var(--badge);
-      color: white;
-      padding: 4px 8px;
-      border-radius: 12px;
-      font-size: 11px;
-      font-weight: bold;
-      z-index: 2;
-    }
-
-    .product-cat { font-size: 11px; color: #94a3b8; text-transform: uppercase; font-weight: bold; }
-    .product-title { font-size: 15px; font-weight: bold; margin: 4px 0 6px 0; color: #0f172a; line-height: 1.3; }
-
-    .policy-tag { font-size: 11px; color: var(--primary-dark); font-weight: 600; margin-bottom: 2px; }
-    .quality-remark { font-size: 11px; color: #64748b; font-style: italic; margin-bottom: 8px; }
-
-    .price-box { margin-bottom: 6px; }
-    .orig-price { text-decoration: line-through; color: #94a3b8; font-size: 13px; margin-right: 6px; }
-    .final-price { color: var(--primary-dark); font-size: 18px; font-weight: bold; }
-    .delivery-tag { font-size: 11px; color: #ea580c; font-weight: 700; margin-bottom: 12px; }
-
-    .btn-group { display: flex; flex-direction: column; gap: 6px; }
-    .btn-cod { background: #f97316; color: white; text-align: center; padding: 10px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
-    .btn-wa { background: #25d366; color: white; text-align: center; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 13px; }
-
-    .modal-overlay {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-      padding: 20px;
-    }
-    .modal-content {
-      background: white;
-      width: 100%;
-      max-width: 500px;
-      border-radius: 12px;
-      padding: 25px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-    .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; }
-    .close-modal { cursor: pointer; font-size: 24px; color: #94a3b8; border: none; background: none; }
-
-    .form-group { margin-bottom: 14px; }
-    .form-group label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 4px; color: #334155; }
-    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; outline: none; }
-    .form-group input:focus { border-color: var(--primary); }
-
-    .order-summary { background: #fff7ed; padding: 12px; border-radius: 6px; margin-bottom: 14px; font-size: 13px; }
-    .total-text { color: #c2410c; font-size: 16px; margin-top: 4px; }
-
-    .btn-submit { width: 100%; background: var(--primary); color: white; padding: 12px; border: none; border-radius: 6px; font-size: 15px; font-weight: bold; cursor: pointer; }
-
-    .review-section { margin-top: 40px; background: white; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0; }
-    .review-section h2 { font-size: 18px; margin-bottom: 15px; color: var(--dark); }
-    .review-card { background: #f8fafc; padding: 12px 16px; border-radius: 8px; margin-bottom: 10px; border-left: 4px solid var(--primary); }
-    .review-header { display: flex; justify-content: space-between; font-weight: bold; font-size: 13px; }
-    .review-comment { font-size: 13px; color: #475569; margin-top: 4px; }
-
-    #noResults { display: none; text-align: center; color: #94a3b8; font-size: 1.2rem; margin-top: 40px; }
-    footer { text-align: center; margin-top: 40px; font-size: 12px; color: #94a3b8; }
-  </style>
+.no-results{text-align:center;color:#94a3b8;font-size:18px;margin:40px 0;display:none}
+footer{text-align:center;color:#94a3b8;font-size:12px;margin-top:35px}
+@media(max-width:650px){.brand h1{font-size:31px}.topbar{justify-content:center}.contact{justify-content:center}.socials{order:3}.invoice-head{flex-direction:column}.invoice-meta{text-align:left}}
+@media print{body>*{display:none!important}.overlay{display:block!important;position:static;background:none;padding:0}.modal{max-width:none;box-shadow:none;padding:0}.modal>*:not(.invoice-wrap){display:none!important}.invoice-actions{display:none!important}}
+</style>
 </head>
 <body>
 
-  <div class="social-bar">
-    <div class="contact-info">
-      <span><i class="fa-solid fa-envelope"></i> <a href="mailto:zohaibejaz098@gmail.com">zohaibejaz098@gmail.com</a></span>
-      <span><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/92336987944" target="_blank">+92 336 987944</a></span>
-    </div>
-    <button class="btn-admin" onclick="toggleModal('adminModal', true)"><i class="fa-solid fa-gear"></i> Admin Panel</button>
+<div class="topbar">
+  <div class="contact">
+    <span><i class="fa-solid fa-envelope"></i> <a href="mailto:zohaibejaz098@gmail.com">zohaibejaz098@gmail.com</a></span>
+    <span><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/923336987944" target="_blank" rel="noopener">+92 333 6987944</a></span>
+  </div>
+  
+  <!-- تمام سوشل میڈیا کے لنکس (ان میں اپنے لنکس تبدیل کر سکتے ہیں) -->
+  <div class="socials" aria-label="Social media">
+    <a href="https://www.facebook.com/ZohaibEjaz" target="_blank" rel="noopener" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/zohaib_ejaz1/" target="_blank" rel="noopener" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.snapchat.com/add/zohaibejaz098" target="_blank" rel="noopener" title="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
+    <a href="https://www.tiktok.com/@zohaibejaz098" target="_blank" rel="noopener" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+    <a href="https://youtube.com/" target="_blank" rel="noopener" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    <a href="https://twitter.com/" target="_blank" rel="noopener" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="https://linkedin.com/" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+  </div>
+  
+  <button class="btn-admin" onclick="openAdmin()"><i class="fa-solid fa-lock"></i> Admin Login</button>
+</div>
+
+<header>
+  <div class="brand"><h1>ZEE<span>-MART</span></h1></div>
+  <p class="tagline">Official Online Supermarket & Hardware Store • Cash on Delivery • 7-Day Return Policy</p>
+  <div class="search"><input id="searchInput" placeholder="🔍 Search Drill, LED Bulb, Basmati Rice, Shoes..." aria-label="Search products"><i class="fa-solid fa-magnifying-glass"></i></div>
+</header>
+
+<main class="container">
+  <div class="categories" id="categoryContainer">
+    <button class="cat active" onclick="filterCategory('all',this)">All Items</button>
+    <button class="cat" onclick="filterCategory('grocery',this)">🛒 Grocery & Staples</button>
+    <button class="cat" onclick="filterCategory('hardware',this)">🔧 Hardware & Tools</button>
+    <button class="cat" onclick="filterCategory('electronics',this)">⚡ Electronics</button>
+    <button class="cat" onclick="filterCategory('gents',this)">👔 Gents Apparel</button>
+    <button class="cat" onclick="filterCategory('ladies',this)">👗 Ladies Apparel</button>
+    <button class="cat" onclick="filterCategory('kids',this)">👶 Kids & Baby</button>
+    <button class="cat" onclick="filterCategory('shoes',this)">👟 Footwear</button>
   </div>
 
-  <header>
-    <div class="brand-logo">
-      <h1>ZEE<span>-MART</span></h1>
-    </div>
-    <p class="brand-tagline">Complete Supermarket & Hardware Store • 7-Day Money-Back Guarantee</p>
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="🔍 Search items (e.g. Drill, LED Bulb, Jeans, Shoes, Basmati)..." />
-    </div>
-  </header>
-
-  <div class="container">
-    <div class="categories" id="categoryContainer">
-      <button class="cat-btn active" onclick="filterCategory('all', this)">All Items</button>
-      <button class="cat-btn" onclick="filterCategory('grocery', this)">🛒 Grocery & Staples</button>
-      <button class="cat-btn" onclick="filterCategory('hardware', this)">🔧 Hardware & Tools</button>
-      <button class="cat-btn" onclick="filterCategory('electronics', this)">⚡ Electronics</button>
-      <button class="cat-btn" onclick="filterCategory('gents', this)">👔 Gents Apparel</button>
-      <button class="cat-btn" onclick="filterCategory('ladies', this)">👗 Ladies Apparel</button>
-      <button class="cat-btn" onclick="filterCategory('kids', this)">👶 Kids & Baby</button>
-      <button class="cat-btn" onclick="filterCategory('shoes', this)">👟 Footwear</button>
-    </div>
-
-    <div class="catalog-count" id="catalogCount">Loading store items...</div>
-
-    <div class="product-grid" id="productGrid"></div>
-    <div id="noResults"><i class="fa-solid fa-magnifying-glass"></i> No products found matching your search.</div>
-
-    <div class="review-section">
-      <h2>💬 Customer Remarks & Store Reviews</h2>
-      <form id="commentForm">
-        <div class="form-group">
-          <input type="text" id="custName" placeholder="Your Full Name" required />
-        </div>
-        <div class="form-group">
-          <textarea id="custComment" rows="2" placeholder="Write feedback or quality remarks..." required></textarea>
-        </div>
-        <button type="submit" class="btn-submit" style="width: auto; padding: 10px 24px;">Post Review</button>
-      </form>
-      <div id="commentsList" style="margin-top: 20px;"></div>
-    </div>
+  <div class="location-search">
+    <i class="fa-solid fa-location-dot"></i>
+    <input class="loc-input" id="locationInput" placeholder="Enter your area/city (e.g. Peshawar, Islamabad)">
+    <button class="loc-btn" onclick="findNearbyHotels()"><i class="fa-solid fa-hotel"></i> Find Nearby Hotels</button>
   </div>
 
-  <div class="modal-overlay" id="codModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2>📦 Cash on Delivery Order</h2>
-        <button class="close-modal" onclick="toggleModal('codModal', false)">&times;</button>
+  <div class="suggestion-box" id="suggestionBox">
+    <h3>🍕 Product varieties & suggestions</h3>
+    <div class="variant-list" id="variantList"></div>
+  </div>
+
+  <div class="hotel-box" id="hotelBox">
+    <h3 style="margin-bottom:12px">🏨 Nearby Hotel Search</h3>
+    <div id="hotelResults"></div>
+  </div>
+
+  <div class="count" id="catalogCount">Loading store items...</div>
+  <div class="grid" id="productGrid"></div>
+  <div class="no-results" id="noResults"><i class="fa-solid fa-magnifying-glass"></i> No products found.</div>
+
+  <section class="section">
+    <h2>💬 Customer Remarks & Store Reviews</h2>
+    <form id="commentForm">
+      <div class="form-group"><input id="custName" placeholder="Your Full Name" required></div>
+      <div class="form-group"><textarea id="custComment" rows="2" placeholder="Write feedback or quality remarks..." required></textarea></div>
+      <button class="btn">Post Review</button>
+    </form>
+    <div id="commentsList"></div>
+  </section>
+</main>
+
+<div class="overlay" id="codModal">
+  <div class="modal">
+    <div class="modal-head"><h2>📦 Cash on Delivery Order</h2><button class="close" onclick="closeModal('codModal')">&times;</button></div>
+    <form id="codForm">
+      <input type="hidden" id="orderItemName"><input type="hidden" id="orderItemPrice">
+      <div class="form-group"><label>Selected Item</label><input id="displayItemName" readonly></div>
+      <div class="qty-row">
+        <div class="form-group"><label>Quantity</label><input type="number" id="orderQty" min="1" value="1" required></div>
+        <div class="form-group"><label>Unit Price</label><input id="displayUnitPrice" readonly></div>
       </div>
-      <form id="codForm">
-        <input type="hidden" id="orderItemName" />
-        <input type="hidden" id="orderItemPrice" />
-        
-        <div class="form-group">
-          <label>Selected Item</label>
-          <input type="text" id="displayItemName" readonly />
-        </div>
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" id="custFullName" required placeholder="Enter your full name" />
-        </div>
-        <div class="form-group">
-          <label>Mobile / WhatsApp Number</label>
-          <input type="tel" id="custPhone" placeholder="03XXXXXXXXX" required />
-        </div>
-        <div class="form-group">
-          <label>Full Delivery Address</label>
-          <textarea id="custAddress" rows="3" required placeholder="House #, Street #, Area, City"></textarea>
-        </div>
-        
-        <div class="order-summary">
-          <div>Item Price: <strong id="summaryPrice">PKR 0</strong></div>
-          <div>Delivery Charges: <strong>PKR 300</strong></div>
-          <hr style="margin: 8px 0;">
-          <div class="total-text">Total Payable: <strong id="summaryTotal">PKR 0</strong></div>
-        </div>
+      <div class="form-group"><label>Full Name</label><input id="custFullName" required placeholder="Enter your full name"></div>
+      <div class="form-group"><label>Mobile / WhatsApp Number</label><input id="custPhone" type="tel" required placeholder="03XXXXXXXXX"></div>
+      <div class="form-group"><label>Full Delivery Address</label><textarea id="custAddress" rows="3" required placeholder="House #, Street #, Area, City"></textarea></div>
+      <div class="summary">
+        <div>Subtotal: <strong id="summaryPrice">PKR 0</strong></div>
+        <div>Delivery Charges: <strong>PKR 300</strong></div>
+        <div class="total">Total Payable: <strong id="summaryTotal">PKR 0</strong></div>
+      </div>
+      <button class="btn" style="width:100%">✅ Confirm Order & Generate Invoice</button>
+    </form>
+  </div>
+</div>
 
-        <button type="submit" class="btn-submit">✅ Confirm Order via WhatsApp</button>
+<div class="overlay" id="invoiceModal">
+  <div class="modal">
+    <div class="modal-head"><h2>🧾 Order Invoice</h2><button class="close" onclick="closeModal('invoiceModal')">&times;</button></div>
+    <div class="invoice-wrap" id="invoiceWrap"></div>
+  </div>
+</div>
+
+<div class="overlay" id="adminModal">
+  <div class="modal">
+    <div class="modal-head"><h2>🔐 Admin / Product Manager</h2><button class="close" onclick="closeModal('adminModal')">&times;</button></div>
+
+    <div id="adminLoginBox">
+      <div class="admin-status">Only the store administrator can add, edit or delete products.</div>
+      <form id="adminLoginForm">
+        <div class="form-group"><label>Admin Password</label><input type="password" id="adminPassword" required placeholder="Enter admin password"></div>
+        <button class="btn" style="width:100%">🔓 Login</button>
       </form>
     </div>
-  </div>
 
-  <div class="modal-overlay" id="adminModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2>➕ Add New Item to Store</h2>
-        <button class="close-modal" onclick="toggleModal('adminModal', false)">&times;</button>
-      </div>
+    <div id="adminManager" style="display:none">
+      <div class="admin-status"><b>Admin Mode Active</b> — product changes are restricted to this panel.</div>
+      <div class="admin-status">💰 Pricing formula: <b>Market Price × 1.25 × 0.90</b> = customer selling price (25% markup, then 10% discount). Example: PKR 100 → PKR 125 → PKR 112.50.</div>
       <form id="productForm">
-        <div class="form-group">
-          <label>Product Name</label>
-          <input type="text" id="pName" placeholder="e.g. Electric Drill Machine" required />
-        </div>
-        <div class="form-group">
-          <label>Category</label>
-          <select id="pCategory">
-            <option value="grocery">Grocery & Staples</option>
-            <option value="hardware">Hardware & Tools</option>
-            <option value="electronics">Electronics</option>
-            <option value="gents">Gents Apparel</option>
-            <option value="ladies">Ladies Apparel</option>
-            <option value="kids">Kids & Baby</option>
-            <option value="shoes">Footwear</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Image URL (Optional - Leave blank for Auto AI Image)</label>
-          <input type="url" id="pImg" placeholder="https://..." />
-        </div>
-        <div class="form-group">
-          <label>Quality Remark</label>
-          <input type="text" id="pRemark" value="Verified Premium Quality" required />
-        </div>
-        <div style="display: flex; gap: 10px;">
-          <div class="form-group" style="flex:1;">
-            <label>Cost (PKR)</label>
-            <input type="number" id="pCost" required min="1" value="1000" />
-          </div>
-          <div class="form-group" style="flex:1;">
-            <label>Profit %</label>
-            <input type="number" id="pMarkup" required min="0" value="25" />
-          </div>
-          <div class="form-group" style="flex:1;">
-            <label>Discount %</label>
-            <input type="number" id="pDiscount" required min="0" value="10" />
-          </div>
-        </div>
-        <button type="submit" class="btn-submit">➕ Save & Publish Item</button>
+      <div class="form-group"><label>Product Name</label><input id="pName" required placeholder="e.g. Electric Drill Machine"></div>
+      <div class="form-group"><label>Category</label><select id="pCategory">
+        <option value="grocery">Grocery & Staples</option><option value="hardware">Hardware & Tools</option><option value="electronics">Electronics</option><option value="gents">Gents Apparel</option><option value="ladies">Ladies Apparel</option><option value="kids">Kids & Baby</option><option value="shoes">Footwear</option>
+      </select></div>
+      <div class="form-group"><label>Image URL (optional)</label><input type="url" id="pImg" placeholder="https://..."></div>
+      <div class="form-group"><label>Quality Remark</label><input id="pRemark" value="Verified Premium Quality" required></div>
+      <div class="qty-row">
+        <div class="form-group"><label>Cost PKR</label><input type="number" id="pCost" min="1" value="1000" required></div>
+        <div class="form-group"><label>Profit %</label><input type="number" id="pMarkup" min="0" value="25" required></div>
+        <div class="form-group"><label>Discount %</label><input type="number" id="pDiscount" min="0" max="100" value="10" required></div>
+      </div>
+      <button class="btn" style="width:100%">➕ Save & Publish Item</button>
       </form>
+      <hr style="margin:20px 0;border:0;border-top:1px solid #e2e8f0">
+      <button class="btn" style="background:#0f172a;width:100%" onclick="exportOrders()">📊 Export Orders CSV</button>
+      <button class="btn" style="background:#ef4444;width:100%;margin-top:8px" onclick="adminLogout()">🔒 Logout Admin</button>
     </div>
   </div>
+</div>
 
-  <footer>
-    <p>&copy; 2026 ZEE-MART Megastore. All Rights Reserved. Designed for Superfast Online Shopping.</p>
-  </footer>
+<footer>
+  <p>© 2026 ZEE-MART Megastore. All Rights Reserved.</p>
+  <p style="margin-top:5px">Official Store • COD • Customer Support via WhatsApp</p>
+  <p style="margin-top:5px">Admin-only product management • Automated invoice & order ID</p>
+</footer>
 
-  <!-- Firebase Integration Engine -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+<script>
+const STORE = {
+  name:"ZEE-MART",
+  phone:"923336987944",
+  email:"zohaibejaz098@gmail.com",
+  delivery:300,
+  currency:"PKR",
+  dataVersion:3
+};
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyBAN9IiZuSG8nHD9yXdKi_Ak39wJDIklBI",
-      authDomain: "zee-mart-store.firebaseapp.com",
-      projectId: "zee-mart-store",
-      storageBucket: "zee-mart-store.firebasestorage.app",
-      messagingSenderId: "816178502550",
-      appId: "1:816178502550:web:b2578e5fe91b281ed79bb7",
-      measurementId: "G-TBJN3MXLSJ"
-    };
+const raw = {
+  grocery:["Aam Papad","Aata","Almonds","Anardana","Apple Jam","Basmati Rice","Black Tea","Bread","Butter","Chicken Nuggets","Chocolate","Coffee","Eggs","Honey","Milk","Olive Oil","Red Chili Powder","Sugar","Yogurt"],
+  hardware:["Allen Key Set","Anchor Bolt","Bearing","Cable Tie","Drill Machine","Hammer","Hand Saw","Pliers","Screwdriver","Toolbox","Wrench","Safety Helmet","Duct Tape","Grinder"],
+  electronics:["LED Bulb","Ceiling Fan","Extension Board","Mobile Charger","Fast Charger","USB Cable","Bluetooth Speaker","Earphones","Smart TV Stick","CCTV Camera","Wi-Fi Router","Electric Kettle"],
+  gents:["Men T-Shirt","Polo Shirt","Formal Shirt","Men Jeans","Cargo Pants","Shalwar Kameez","Kurta","Blazer","Jacket","Sweater","Hoodie","Sports Socks"],
+  ladies:["Ladies Kurti","Shalwar Kameez","Three Piece Suit","Lawn Suit","Maxi Dress","Ladies Jeans","Abaya","Dupatta","Ladies Jacket","Ladies Handbag"],
+  kids:["Baby Bodysuit","Baby Romper","Baby Frock","Baby Sweater","Kids Jeans","Kids T-Shirt","Kids Jacket","School Uniform Shirt","Kids Toys"],
+  shoes:["Men Formal Shoes","Men Sports Shoes","Men Joggers","Men Sneakers","Men Peshawari Chappal","Ladies Heels","Ladies Sandals","Ladies Khussa","Baby Shoes","Kids School Shoes"]
+};
 
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-  </script>
+function aiImage(name){
+  const prompt = "professional ecommerce product photo of " + name + ", centered single product, clean white studio background, realistic Pakistani online store catalog photo, no text, no logo";
+  return "https://image.pollinations.ai/prompt/" + encodeURIComponent(prompt) + "?width=500&height=400&seed=" + encodeURIComponent(name) + "&nologo=true";
+}
+function fallback(name){
+  const safe=name.replace(/[<>&"']/g,"");
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300"><rect width="100%" height="100%" fill="#0f172a"/><circle cx="200" cy="105" r="45" fill="#10b981" opacity=".35"/><text x="50%" y="48%" text-anchor="middle" fill="#fff" font-size="20" font-family="Arial" font-weight="bold">${safe}</text><text x="50%" y="64%" text-anchor="middle" fill="#facc15" font-size="13" font-family="Arial" font-weight="bold">ZEE-MART</text></svg>`;
+  return "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(svg);
+}
 
-  <!-- Store Logic Script -->
-  <script>
-    const userPhone = "92336987944";
-    const deliveryCharge = 300;
+const MARKET_PRICES = {'Aam Papad': 350, 'Aata': 2200, 'Almonds': 3200, 'Anardana': 1200, 'Apple Jam': 650, 'Basmati Rice': 420, 'Black Tea': 1200, 'Bread': 180, 'Butter': 750, 'Chicken Nuggets': 1100, 'Chocolate': 450, 'Coffee': 1600, 'Eggs': 300, 'Honey': 1400, 'Milk': 250, 'Olive Oil': 2800, 'Red Chili Powder': 450, 'Sugar': 190, 'Yogurt': 280, 'Allen Key Set': 650, 'Anchor Bolt': 120, 'Bearing': 850, 'Cable Tie': 250, 'Drill Machine': 8500, 'Hammer': 1200, 'Hand Saw': 1100, 'Pliers': 900, 'Screwdriver': 650, 'Toolbox': 3500, 'Wrench': 1100, 'Safety Helmet': 700, 'Duct Tape': 300, 'Grinder': 9500, 'LED Bulb': 450, 'Ceiling Fan': 7500, 'Extension Board': 1200, 'Mobile Charger': 1200, 'Fast Charger': 1800, 'USB Cable': 600, 'Bluetooth Speaker': 2500, 'Earphones': 900, 'Smart TV Stick': 5500, 'CCTV Camera': 4500, 'Wi-Fi Router': 4500, 'Electric Kettle': 3500, 'Men T-Shirt': 1400, 'Polo Shirt': 2200, 'Formal Shirt': 3000, 'Men Jeans': 3200, 'Cargo Pants': 2800, 'Shalwar Kameez': 6000, 'Kurta': 3500, 'Blazer': 8500, 'Jacket': 5500, 'Sweater': 3000, 'Hoodie': 3200, 'Sports Socks': 500, 'Ladies Kurti': 3000, 'Three Piece Suit': 5500, 'Lawn Suit': 5000, 'Maxi Dress': 6000, 'Ladies Jeans': 3200, 'Abaya': 4500, 'Dupatta': 1800, 'Ladies Jacket': 4500, 'Ladies Handbag': 3500, 'Baby Bodysuit': 1200, 'Baby Romper': 1500, 'Baby Frock': 2200, 'Baby Sweater': 1800, 'Kids Jeans': 2200, 'Kids T-Shirt': 1200, 'Kids Jacket': 3000, 'School Uniform Shirt': 1100, 'Kids Toys': 1800, 'Men Formal Shoes': 6500, 'Men Sports Shoes': 4500, 'Men Joggers': 4200, 'Men Sneakers': 5000, 'Men Peshawari Chappal': 3500, 'Ladies Heels': 4500, 'Ladies Sandals': 2500, 'Ladies Khussa': 3000, 'Baby Shoes': 1400, 'Kids School Shoes': 2200};
 
-    const rawGrocery = ["Aam Papad", "Aata", "Almonds", "Anardana", "Apple Jam", "Basmati Rice", "Black Tea", "Bread", "Butter", "Chicken Nuggets", "Chocolate", "Coffee", "Eggs", "Honey", "Milk", "Olive Oil", "Red Chili Powder", "Sugar", "Yogurt"];
-    const rawHardware = ["Allen Key Set", "Anchor Bolt", "Bearing", "Cable Tie", "Drill Machine", "Hammer", "Hand Saw", "Pliers", "Screwdriver", "Toolbox", "Wrench", "Safety Helmet", "Duct Tape", "Grinder"];
-    const rawElectronics = ["LED Bulb", "Ceiling Fan", "Extension Board", "Mobile Charger", "Fast Charger", "USB Cable", "Bluetooth Speaker", "Earphones", "Smart TV Stick", "CCTV Camera", "Wi-Fi Router", "Electric Kettle"];
-    const rawGents = ["Men T-Shirt", "Polo Shirt", "Formal Shirt", "Men Jeans", "Cargo Pants", "Shalwar Kameez", "Kurta", "Blazer", "Jacket", "Sweater", "Hoodie", "Sports Socks"];
-    const rawLadies = ["Ladies Kurti", "Shalwar Kameez", "Three Piece Suit", "Lawn Suit", "Maxi Dress", "Ladies Jeans", "Abaya", "Dupatta", "Ladies Jacket", "Ladies Handbag"];
-    const rawKids = ["Baby Bodysuit", "Baby Romper", "Baby Frock", "Baby Sweater", "Kids Jeans", "Kids T-Shirt", "Kids Jacket", "School Uniform Shirt", "Kids Toys"];
-    const rawShoes = ["Men Formal Shoes", "Men Sports Shoes", "Men Joggers", "Men Sneakers", "Men Peshawari Chappal", "Ladies Heels", "Ladies Sandals", "Ladies Khussa", "Baby Shoes", "Kids School Shoes"];
+function build(arr,cat){
+  return arr.map((name,i)=>({
+    id:cat+"_"+i,
+    name,
+    category:cat,
+    costPrice:Number(MARKET_PRICES[name] || 1000),
+    markupPercent:25,
+    discountPercent:10,
+    remark:"Market reference price • Verified Premium Quality",
+    img:aiImage(name)
+  }));
+}
+const initialCatalog=[...build(raw.grocery,"grocery"),...build(raw.hardware,"hardware"),...build(raw.electronics,"electronics"),...build(raw.gents,"gents"),...build(raw.ladies,"ladies"),...build(raw.kids,"kids"),...build(raw.shoes,"shoes")];
 
-    function getAIImageUrl(productName) {
-      return `https://pollinations.ai/p/${encodeURIComponent(productName)}?width=400&height=300&seed=42&nologo=true`;
-    }
+const defaultComments=[
+ {name:"Zohaib Ejaz",comment:"Complete one-stop shop! Everything from hardware tools to groceries delivered right to my door."},
+ {name:"Usman Ahmed",comment:"Ordered drill machine and LED lights. Fast COD delivery and genuine quality."}
+];
 
-    function generateSvgFallback(name) {
-      const cleanName = name.replace(/[^a-zA-Z0-9 ]/g, "");
-      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="#0f172a"/><circle cx="200" cy="120" r="45" fill="#10b981" opacity="0.3"/><text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-family="Segoe UI, Arial" font-size="20" font-weight="bold" fill="#ffffff">${cleanName}</text><text x="50%" y="62%" dominant-baseline="middle" text-anchor="middle" font-family="Segoe UI, Arial" font-size="13" font-weight="600" fill="#facc15">ZEE-MART ORIGINAL</text></svg>`;
-      return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
-    }
+function migrate(){
+  const version=Number(localStorage.getItem("zeemart_data_version")||0);
+  let products=JSON.parse(localStorage.getItem("zeemart_products")||"null");
+  let comments=JSON.parse(localStorage.getItem("zeemart_comments")||"null");
+  let orders=JSON.parse(localStorage.getItem("zeemart_orders")||"[]");
 
-    function buildCategoryList(arr, categoryKey) {
-      return arr.map((item, idx) => {
-        const cost = 250 + ((idx * 43) % 2500);
-        return {
-          id: categoryKey + "_" + idx,
-          name: item,
-          category: categoryKey,
-          costPrice: cost,
-          markupPercent: 25,
-          discountPercent: 10,
-          remark: "100% Guaranteed Quality",
-          img: getAIImageUrl(item)
-        };
-      });
-    }
+  if(!Array.isArray(products)) products=initialCatalog;
+  if(!Array.isArray(comments)) comments=defaultComments;
+  if(!Array.isArray(orders)) orders=[];
 
-    const initialCatalog = [
-      ...buildCategoryList(rawGrocery, "grocery"),
-      ...buildCategoryList(rawHardware, "hardware"),
-      ...buildCategoryList(rawElectronics, "electronics"),
-      ...buildCategoryList(rawGents, "gents"),
-      ...buildCategoryList(rawLadies, "ladies"),
-      ...buildCategoryList(rawKids, "kids"),
-      ...buildCategoryList(rawShoes, "shoes")
-    ];
+  products=products.map((p,i)=>({
+    id:p.id||("migrated_"+Date.now()+"_"+i),
+    name:p.name||"Unnamed Product",
+    category:p.category||"grocery",
+    costPrice:Number(p.costPrice)||1000,
+    markupPercent:Number(p.markupPercent??25),
+    discountPercent:Number(p.discountPercent??10),
+    remark:p.remark||"Verified Premium Quality",
+    img:p.img||aiImage(p.name||"Product")
+  }));
 
-    const defaultComments = [
-      { name: "Zohaib Ejaz", comment: "Complete one-stop shop! Everything from hardware tools to groceries delivered right to my door." },
-      { name: "Usman Ahmed", comment: "Ordered drill machine and LED lights. Fast COD delivery and genuine quality." }
-    ];
+  localStorage.setItem("zeemart_products",JSON.stringify(products));
+  localStorage.setItem("zeemart_comments",JSON.stringify(comments));
+  localStorage.setItem("zeemart_orders",JSON.stringify(orders));
+  localStorage.setItem("zeemart_data_version",String(STORE.dataVersion));
+  if(version<STORE.dataVersion) localStorage.setItem("zeemart_last_upgrade",new Date().toISOString());
+  return {products,comments,orders};
+}
 
-    let products = JSON.parse(localStorage.getItem('zeemart_megastore_products')) || initialCatalog;
-    let comments = JSON.parse(localStorage.getItem('zeemart_megastore_comments')) || defaultComments;
-    let currentCategory = 'all';
+const state=migrate();
+let products=state.products, comments=state.comments, orders=state.orders;
+let currentCategory="all";
 
-    function calculatePricing(item) {
-      const increasedPrice = item.costPrice + (item.costPrice * (item.markupPercent / 100));
-      const finalPrice = increasedPrice - (increasedPrice * (item.discountPercent / 100));
-      return {
-        original: Math.round(increasedPrice),
-        final: Math.round(finalPrice),
-        discount: item.discountPercent
-      };
-    }
+function money(n){return STORE.currency+" "+Number(n||0).toLocaleString("en-PK",{maximumFractionDigits:0})}
+function pricing(p){
+  const marked=p.costPrice+(p.costPrice*(p.markupPercent/100));
+  const final=marked-(marked*(p.discountPercent/100));
+  return {original:Math.round(marked),final:Math.round(final),discount:p.discountPercent};
+}
+function escapeHtml(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
 
-    function renderProducts() {
-      const grid = document.getElementById('productGrid');
-      const searchVal = document.getElementById('searchInput').value.toLowerCase().trim();
-      const noResults = document.getElementById('noResults');
-      const countLabel = document.getElementById('catalogCount');
+function renderProducts(){
+  const grid=document.getElementById("productGrid"), q=document.getElementById("searchInput").value.toLowerCase().trim();
+  grid.innerHTML=""; let matches=0; const frag=document.createDocumentFragment();
+
+  products.forEach(p=>{
+    if((currentCategory==="all"||p.category===currentCategory)&&p.name.toLowerCase().includes(q)){
+      matches++; const pr=pricing(p), card=document.createElement("article"); card.className="card";
+      const wa=encodeURIComponent(`Hello ZEE-MART! I want to order "${p.name}" for ${money(pr.final)} + ${money(STORE.delivery)} delivery.`);
+      const name=escapeHtml(p.name);
       
-      grid.innerHTML = '';
-      let matches = 0;
-      const fragment = document.createDocumentFragment();
+      /* Escape single quotes safely for inline JS */
+      const safeName = p.name.replace(/'/g, "\\'");
 
-      products.forEach(product => {
-        const matchesCat = currentCategory === 'all' || product.category === currentCategory;
-        const matchesSearch = product.name.toLowerCase().includes(searchVal);
-
-        if (matchesCat && matchesSearch) {
-          matches++;
-          const pricing = calculatePricing(product);
-          const card = document.createElement('div');
-          card.className = 'product-card';
-          
-          const waMsg = encodeURIComponent(`Hello ZEE-MART! I want to order "${product.name}" for PKR ${pricing.final.toLocaleString()} (+ PKR 300 Delivery)`);
-          const fallbackSvg = generateSvgFallback(product.name);
-
-          card.innerHTML = `
-            <span class="discount-badge">${pricing.discount}% OFF</span>
-            <div>
-              <div class="img-wrapper">
-                <img src="${product.img}" class="product-img" alt="${product.name}" loading="lazy" onerror="this.onerror=null; this.src='${fallbackSvg}';">
-              </div>
-              <span class="product-cat">${product.category}</span>
-              <h3 class="product-title">${product.name}</h3>
-              <div class="policy-tag">🔄 7-Day Return Guarantee</div>
-              <div class="quality-remark">⭐ ${product.remark || 'Verified Premium Quality'}</div>
-            </div>
-            <div>
-              <div class="price-box">
-                <span class="orig-price">PKR ${pricing.original.toLocaleString()}</span>
-                <span class="final-price">PKR ${pricing.final.toLocaleString()}</span>
-              </div>
-              <div class="delivery-tag">🚚 Delivery Charges: PKR 300</div>
-              <div class="btn-group">
-                <button class="btn-cod" onclick="openCodModal('${product.name.replace(/'/g, "\\'")}', ${pricing.final})">📦 Buy COD Order</button>
-                <a href="https://wa.me/${userPhone}?text=${waMsg}" target="_blank" class="btn-wa">💬 Buy via WhatsApp</a>
-              </div>
-            </div>
-          `;
-          fragment.appendChild(card);
-        }
-      });
-
-      grid.appendChild(fragment);
-      countLabel.innerText = `Displaying ${matches} of ${products.length} total store items`;
-      noResults.style.display = matches === 0 ? 'block' : 'none';
-    }
-
-    function renderComments() {
-      const list = document.getElementById('commentsList');
-      list.innerHTML = '';
-      comments.forEach(c => {
-        const div = document.createElement('div');
-        div.className = 'review-card';
-        div.innerHTML = `
-          <div class="review-header">
-            <span>👤 ${c.name}</span>
-            <span style="color: var(--primary-dark);">Verified Customer</span>
+      card.innerHTML=`
+        <div>
+          <div class="card-top"><span class="badge">${pr.discount}% OFF</span><div class="pic"><img src="${escapeHtml(p.img)}" alt="${name}" loading="lazy"></div></div>
+          <span class="cat-name">${escapeHtml(p.category)}</span><h3 class="title">${name}</h3>
+          <div class="return">🔄 7-Day Return Guarantee</div>
+          <div class="quality">⭐ ${escapeHtml(p.remark||"Verified Premium Quality")}</div><div style="font-size:10px;color:#64748b">Market reference • price may vary by brand/size</div>
+        </div>
+        <div>
+          <div class="price"><span class="old">${money(pr.original)}</span><span class="new">${money(pr.final)}</span></div>
+          <div class="delivery">🚚 Delivery: ${money(STORE.delivery)}</div>
+          <div class="actions">
+            <button class="buy" onclick="openCodModal('${safeName}',${pr.final})">📦 Buy COD Order</button>
+            <a class="wa" href="https://wa.me/${STORE.phone}?text=${wa}" target="_blank" rel="noopener">💬 WhatsApp Order</a>
           </div>
-          <div class="review-comment">"${c.comment}"</div>
-        `;
-        list.appendChild(div);
-      });
+        </div>`;
+      const img=card.querySelector("img"); img.onerror=function(){this.onerror=null;this.src=fallback(p.name)};
+      frag.appendChild(card);
     }
+  });
+  grid.appendChild(frag);
+  document.getElementById("catalogCount").textContent=`Displaying ${matches} of ${products.length} total store items`;
+  document.getElementById("noResults").style.display=matches?"none":"block";
+}
 
-    function filterCategory(cat, btn) {
-      currentCategory = cat;
-      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      renderProducts();
-    }
+function renderComments(){
+  const list=document.getElementById("commentsList"); list.innerHTML="";
+  comments.forEach(c=>{const d=document.createElement("div");d.className="review";d.innerHTML=`<div class="review-head"><span>👤 ${escapeHtml(c.name)}</span><span style="color:#047857">Verified Customer</span></div><div class="review-text">"${escapeHtml(c.comment)}"</div>`;list.appendChild(d)});
+}
 
-    function toggleModal(id, show) {
-      document.getElementById(id).style.display = show ? 'flex' : 'none';
-    }
+function filterCategory(cat,btn){
+  currentCategory=cat;document.querySelectorAll(".cat").forEach(x=>x.classList.remove("active"));btn.classList.add("active");renderProducts();
+}
+function openModal(id){document.getElementById(id).style.display="flex"}
+function closeModal(id){document.getElementById(id).style.display="none"}
 
-    function openCodModal(itemName, itemPrice) {
-      document.getElementById('orderItemName').value = itemName;
-      document.getElementById('orderItemPrice').value = itemPrice;
-      document.getElementById('displayItemName').value = itemName;
-      document.getElementById('summaryPrice').innerText = 'PKR ' + itemPrice.toLocaleString();
-      document.getElementById('summaryTotal').innerText = 'PKR ' + (itemPrice + deliveryCharge).toLocaleString();
-      toggleModal('codModal', true);
-    }
+function openCodModal(name,price){
+  document.getElementById("orderItemName").value=name;
+  document.getElementById("orderItemPrice").value=price;
+  document.getElementById("displayItemName").value=name;
+  document.getElementById("displayUnitPrice").value=money(price);
+  document.getElementById("orderQty").value=1;
+  updateOrderSummary();
+  openModal("codModal");
+}
+function updateOrderSummary(){
+  const p=Number(document.getElementById("orderItemPrice").value||0),q=Math.max(1,Number(document.getElementById("orderQty").value||1));
+  document.getElementById("summaryPrice").textContent=money(p*q);
+  document.getElementById("summaryTotal").textContent=money(p*q+STORE.delivery);
+}
+document.getElementById("orderQty").addEventListener("input",updateOrderSummary);
 
-    document.getElementById('searchInput').addEventListener('input', renderProducts);
+function makeOrderId(){
+  const d=new Date(), stamp=d.toISOString().replace(/\D/g,"").slice(0,14);
+  return "ZM-"+stamp+"-"+Math.floor(100+Math.random()*900);
+}
 
-    document.getElementById('commentForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('custName').value.trim();
-      const comment = document.getElementById('custComment').value.trim();
-      if(name && comment) {
-        comments.unshift({ name, comment });
-        localStorage.setItem('zeemart_megastore_comments', JSON.stringify(comments));
-        renderComments();
-        this.reset();
-      }
-    });
+function buildInvoice(order){
+  return `<div class="invoice">
+    <div class="invoice-head">
+      <div><div class="invoice-brand">ZEE<span>-MART</span></div><div style="font-size:12px;color:#475569">Official Supermarket & Hardware Store</div></div>
+      <div class="invoice-meta"><b>INVOICE</b><br>Order ID: ${escapeHtml(order.id)}<br>Date: ${escapeHtml(order.date)}</div>
+    </div>
+    <div style="margin-top:16px;font-size:13px"><b>Bill To:</b><br>${escapeHtml(order.customer.name)}<br>${escapeHtml(order.customer.phone)}<br>${escapeHtml(order.customer.address)}</div>
+    <table><thead><tr><th>Item</th><th>Qty</th><th>Unit Price</th><th>Total</th></tr></thead><tbody>
+      <tr><td>${escapeHtml(order.item.name)}</td><td>${order.quantity}</td><td>${money(order.unitPrice)}</td><td>${money(order.subtotal)}</td></tr>
+    </tbody></table>
+    <div class="invoice-total"><div><span>Subtotal</span><b>${money(order.subtotal)}</b></div><div><span>Delivery</span><b>${money(order.delivery)}</b></div><div class="grand"><span>Total Payable</span><b>${money(order.total)}</b></div></div>
+    <div class="invoice-note">Payment Method: Cash on Delivery. Thank you for shopping with ZEE-MART. Keep this invoice for order verification and return support.</div>
+    <div class="invoice-actions"><button class="print" onclick="window.print()">🖨️ Print Invoice</button><button class="invoice-wa" onclick="sendInvoiceWhatsApp('${order.id}')">💬 Send Invoice on WhatsApp</button></div>
+  </div>`;
+}
 
-    document.getElementById('productForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('pName').value.trim();
-      const category = document.getElementById('pCategory').value;
-      const imgInput = document.getElementById('pImg').value.trim();
-      const remark = document.getElementById('pRemark').value.trim();
-      const costPrice = parseFloat(document.getElementById('pCost').value);
-      const markupPercent = parseFloat(document.getElementById('pMarkup').value);
-      const discountPercent = parseFloat(document.getElementById('pDiscount').value);
+function sendInvoiceWhatsApp(orderId){
+  const o=orders.find(x=>x.id===orderId); if(!o)return;
+  const msg=`*ZEE-MART INVOICE*\n\n*Order ID:* ${o.id}\n*Item:* ${o.item.name}\n*Qty:* ${o.quantity}\n*Subtotal:* ${money(o.subtotal)}\n*Delivery:* ${money(o.delivery)}\n*Total:* ${money(o.total)}\n\n*Customer:* ${o.customer.name}\n*Phone:* ${o.customer.phone}\n*Address:* ${o.customer.address}`;
+  window.open(`https://wa.me/${STORE.phone}?text=${encodeURIComponent(msg)}`,"_blank");
+}
 
-      const newProduct = {
-        id: 'custom_' + Date.now(),
-        name,
-        category,
-        costPrice,
-        markupPercent,
-        discountPercent,
-        remark,
-        img: imgInput || getAIImageUrl(name)
-      };
+document.getElementById("codForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const unit=Number(document.getElementById("orderItemPrice").value), qty=Math.max(1,Number(document.getElementById("orderQty").value));
+  const order={
+    id:makeOrderId(),date:new Date().toLocaleString("en-PK"),
+    item:{name:document.getElementById("orderItemName").value},
+    unitPrice:unit,quantity:qty,subtotal:unit*qty,delivery:STORE.delivery,total:(unit*qty)+STORE.delivery,
+    customer:{name:document.getElementById("custFullName").value.trim(),phone:document.getElementById("custPhone").value.trim(),address:document.getElementById("custAddress").value.trim()}
+  };
+  orders.unshift(order);localStorage.setItem("zeemart_orders",JSON.stringify(orders));
+  document.getElementById("invoiceWrap").innerHTML=buildInvoice(order);
+  closeModal("codModal");openModal("invoiceModal");
 
-      products.unshift(newProduct);
-      localStorage.setItem('zeemart_megastore_products', JSON.stringify(products));
-      renderProducts();
-      toggleModal('adminModal', false);
-      this.reset();
-    });
+  const wa=`*NEW COD ORDER - ZEE-MART*\n\n*Order ID:* ${order.id}\n*Item:* ${order.item.name}\n*Quantity:* ${order.quantity}\n*Subtotal:* ${money(order.subtotal)}\n*Delivery:* ${money(order.delivery)}\n*Total:* ${money(order.total)}\n\n*Customer Details:*\nName: ${order.customer.name}\nPhone: ${order.customer.phone}\nAddress: ${order.customer.address}`;
+  setTimeout(()=>window.open(`https://wa.me/${STORE.phone}?text=${encodeURIComponent(wa)}`,"_blank"),250);
+  e.target.reset();
+});
 
-    document.getElementById('codForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('orderItemName').value;
-      const price = document.getElementById('orderItemPrice').value;
-      const custName = document.getElementById('custFullName').value;
-      const custPhoneNum = document.getElementById('custPhone').value;
-      const custAddr = document.getElementById('custAddress').value;
+document.getElementById("commentForm").addEventListener("submit",e=>{
+  e.preventDefault();const name=document.getElementById("custName").value.trim(),comment=document.getElementById("custComment").value.trim();
+  if(!name||!comment)return;comments.unshift({name,comment});localStorage.setItem("zeemart_comments",JSON.stringify(comments));renderComments();e.target.reset();
+});
 
-      const message = `*NEW COD ORDER - ZEE-MART*\n\n` +
-                      `*Item:* ${name}\n` +
-                      `*Price:* PKR ${price}\n` +
-                      `*Delivery Fee:* PKR 300\n` +
-                      `*Total Amount:* PKR ${parseInt(price) + deliveryCharge}\n\n` +
-                      `*Customer Details:*\n` +
-                      `• Name: ${custName}\n` +
-                      `• Phone: ${custPhoneNum}\n` +
-                      `• Address: ${custAddr}`;
+document.getElementById("productForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const p={id:"custom_"+Date.now(),name:document.getElementById("pName").value.trim(),category:document.getElementById("pCategory").value,costPrice:Number(document.getElementById("pCost").value),markupPercent:Number(document.getElementById("pMarkup").value),discountPercent:Number(document.getElementById("pDiscount").value),remark:document.getElementById("pRemark").value.trim(),img:document.getElementById("pImg").value.trim()||aiImage(document.getElementById("pName").value.trim())};
+  products.unshift(p);localStorage.setItem("zeemart_products",JSON.stringify(products));renderProducts();e.target.reset();closeModal("adminModal");
+});
 
-      window.open(`https://wa.me/${userPhone}?text=${encodeURIComponent(message)}`, '_blank');
-      toggleModal('codModal', false);
-      this.reset();
-    });
+function exportOrders(){
+  if(!orders.length){alert("No orders available yet.");return}
+  const rows=[["Order ID","Date","Customer","Phone","Address","Item","Quantity","Unit Price","Subtotal","Delivery","Total"]];
+  orders.forEach(o=>rows.push([o.id,o.date,o.customer.name,o.customer.phone,o.customer.address,o.item.name,o.quantity,o.unitPrice,o.subtotal,o.delivery,o.total]));
+  const csv=rows.map(r=>r.map(v=>`"${String(v??"").replace(/"/g,'""')}"`).join(",")).join("\n");
+  const blob=new Blob([csv],{type:"text/csv;charset=utf-8"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="zee-mart-orders.csv";a.click();URL.revokeObjectURL(a.href);
+}
 
-    renderProducts();
-    renderComments();
-  </script>
+const VARIETIES = {
+  pizza:["Chicken Pizza","Chicken Tikka Pizza","Chicken Fajita Pizza","Malai Boti Pizza","Pepperoni Pizza","Cheese Pizza","Vegetable Pizza","BBQ Pizza","Hawaiian Pizza","Margherita Pizza","Stuffed Crust Pizza","Thin Crust Pizza","Large Pizza","Medium Pizza","Small Pizza"],
+  burger:["Zinger Burger","Chicken Burger","Beef Burger","Cheese Burger","Double Beef Burger","Double Chicken Burger","BBQ Burger","Mushroom Burger"],
+  biryani:["Chicken Biryani","Beef Biryani","Mutton Biryani","Pulao","Sindhi Biryani","Mughlai Biryani"],
+  rice:["Basmati Rice","Super Basmati Rice","Sella Rice","Brown Rice","Steam Rice"],
+  tea:["Black Tea","Green Tea","Kashmiri Tea","Masala Tea","Milk Tea"],
+  shoes:["Men Formal Shoes","Men Sports Shoes","Men Joggers","Men Sneakers","Men Peshawari Chappal","Ladies Heels","Ladies Sandals","Ladies Khussa","Baby Shoes","Kids School Shoes"],
+  drill:["Drill Machine","Cordless Drill","Impact Drill","Hammer Drill","Rotary Hammer","Drill Bit Set"],
+  charger:["Mobile Charger","Fast Charger","Type-C Fast Charger","iPhone Charger","USB Cable","Car Charger"],
+  cake:["Chocolate Cake","Vanilla Cake","Red Velvet Cake","Black Forest Cake","Cheesecake","Birthday Cake"],
+  chicken:["Chicken Nuggets","Chicken Wings","Chicken Breast","Chicken Tikka","Chicken Karahi","Chicken Biryani"]
+};
+
+function showSmartSuggestions(query){
+  const box=document.getElementById("suggestionBox"), list=document.getElementById("variantList");
+  const q=query.toLowerCase().trim();
+  let matches=[];
+  Object.keys(VARIETIES).forEach(k=>{
+    if(q.includes(k) || k.includes(q)) matches.push(...VARIETIES[k]);
+  });
+  if(!matches.length){box.style.display="none";return}
+  matches=[...new Set(matches)];
+  list.innerHTML=matches.map(x=>`<button class="variant" onclick="useSuggestion('${x.replace(/'/g,"\\'")}')">${escapeHtml(x)}</button>`).join("");
+  box.style.display="block";
+}
+
+function useSuggestion(name){
+  document.getElementById("searchInput").value=name;
+  renderProducts();
+  const exact=products.find(p=>p.name.toLowerCase()===name.toLowerCase());
+  if(!exact){
+    document.getElementById("catalogCount").textContent=`No exact catalog item for "${name}" yet — add it from Admin Panel.`;
+  }
+}
+
+async function findNearbyHotels(){
+  const input=document.getElementById("locationInput").value.trim();
+  const box=document.getElementById("hotelBox"), results=document.getElementById("hotelResults");
+  if(!input){alert("Please enter your area/city first.");return}
+  box.style.display="block";
+  results.innerHTML=`<div class="hotel-grid"><div class="hotel-card"><b>Nearby Hotels</b><span>Search results for ${escapeHtml(input)}</span><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/hotels+near+${encodeURIComponent(input)}">Open Nearby Hotels in Maps →</a></div></div>`;
+}
+
+const ADMIN_PASSWORD="ZM-Admin-2026";
+let adminLoggedIn=sessionStorage.getItem("zeemart_admin")==="1";
+
+function syncAdminUI(){
+  document.getElementById("adminLoginBox").style.display=adminLoggedIn?"none":"block";
+  document.getElementById("adminManager").style.display=adminLoggedIn?"block":"none";
+}
+function openAdmin(){syncAdminUI();openModal("adminModal")}
+function adminLogout(){adminLoggedIn=false;sessionStorage.removeItem("zeemart_admin");syncAdminUI()}
+document.getElementById("adminLoginForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  if(document.getElementById("adminPassword").value===ADMIN_PASSWORD){
+    adminLoggedIn=true;sessionStorage.setItem("zeemart_admin","1");document.getElementById("adminPassword").value="";syncAdminUI();
+  }else alert("Incorrect admin password.");
+});
+
+const originalProductSubmit=document.getElementById("productForm");
+originalProductSubmit.addEventListener("submit",e=>{
+  if(!adminLoggedIn){e.preventDefault();alert("Admin login required.");}
+},true);
+
+document.getElementById("searchInput").addEventListener("input",function(){renderProducts();showSmartSuggestions(this.value)});
+document.querySelectorAll(".overlay").forEach(o=>o.addEventListener("click",e=>{if(e.target===o)o.style.display="none"}));
+renderProducts();renderComments();
+</script>
 </body>
 </html>
