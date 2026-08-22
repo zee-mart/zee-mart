@@ -28,16 +28,17 @@
 .overlay{display:none;position:fixed;inset:0;background:#000b;z-index:5000;align-items:center;justify-content:center;padding:15px}.modal{background:#fff;width:min(760px,100%);max-height:94vh;overflow:auto;border-radius:14px;padding:24px}.modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e4e9e4;padding-bottom:13px;margin-bottom:17px}.close{border:0;background:none;font-size:27px;cursor:pointer;color:#718071}
 .cart-row{display:grid;grid-template-columns:70px 1fr auto;gap:12px;align-items:center;border-bottom:1px solid #e7ebe7;padding:12px 0}.cart-thumb{width:70px;height:70px;border-radius:8px;background:#eef3ed;display:grid;place-items:center}.cart-thumb i{font-size:28px;color:#4eaf24}.qty{display:flex;align-items:center;gap:8px;margin-top:6px}.qty button{border:1px solid #ccd5ca;background:#fff;border-radius:5px;width:28px;height:28px;cursor:pointer}.cart-total{background:#f1f6ef;border-radius:8px;padding:15px;margin-top:15px}
 .checkout-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{margin-bottom:12px}.field label{display:block;font-size:12px;font-weight:800;margin-bottom:5px}.field input,.field textarea,.field select{width:100%;border:1px solid #cfd8cd;border-radius:7px;padding:11px;outline:0}
-.pay-options{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0 16px}.pay-option{border:1px solid #cfd8cd;padding:12px;border-radius:8px;cursor:pointer;text-align:center;font-size:12px;font-weight:800}.pay-option.active{border:2px solid #52b800;background:#f0faeb}.notice{background:#fff8e6;border:1px solid #f1d78d;padding:10px;border-radius:7px;font-size:11px;color:#745a18;margin-bottom:13px}.google-btn{width:100%;background:#fff;border:1px solid #cdd5cc;padding:11px;border-radius:7px;font-weight:800;cursor:pointer}.google-btn i{color:#4285f4;margin-right:8px}.empty{padding:35px;text-align:center;color:#7d897d}
-.tracking-card{background:#f4f8f4;border:1px solid #d5e5d5;border-radius:8px;padding:15px;margin-top:12px}
-.tracking-status{display:inline-block;background:var(--g);color:#071006;font-size:11px;font-weight:900;padding:3px 8px;border-radius:12px;margin-bottom:8px}
+.pay-options{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:10px 0 16px}.pay-option{border:1px solid #cfd8cd;padding:12px;border-radius:8px;cursor:pointer;text-align:center;font-size:12px;font-weight:800}.pay-option.active{border:2px solid #52b800;background:#f0faeb}.notice{background:#fff8e6;border:1px solid #f1d78d;padding:10px;border-radius:7px;font-size:11px;color:#745a18;margin-bottom:13px}.google-btn{width:100%;background:#fff;border:1px solid #cdd5cc;padding:11px;border-radius:7px;font-weight:800;cursor:pointer}.google-btn i{color:#4285f4;margin-right:8px}.empty{padding:35px;text-align:center;color:#7d897d}
+.invoice-box{background:#f8fbf8;border:2px dashed #39a900;padding:20px;border-radius:10px;margin-top:15px;font-size:13px}
+.invoice-header{display:flex;justify-content:space-between;border-bottom:1px solid #ccc;padding-bottom:10px;margin-bottom:10px}
+.invoice-table{width:100%;border-collapse:collapse;margin:10px 0}.invoice-table th,.invoice-table td{border-bottom:1px solid #eee;padding:6px 0;text-align:left}.invoice-table th{color:#555}
 @media(max-width:1000px){.header{grid-template-columns:1fr}.products{grid-template-columns:repeat(3,1fr)}.categories{grid-template-columns:repeat(4,1fr)}.hero{grid-template-columns:1fr}.hero-cart{display:none}.trust{grid-template-columns:repeat(2,1fr);gap:18px}.footer{grid-template-columns:1fr 1fr}}
 @media(max-width:650px){.toplinks{display:none}.header-actions{justify-content:space-between}.navlinks{gap:13px}.catmenu{margin-right:10px;padding:14px}.hero{padding:35px 6%}.hero h2{font-size:39px}.products{grid-template-columns:repeat(2,1fr)}.categories{grid-template-columns:repeat(2,1fr)}.trust{grid-template-columns:1fr}.trust div{border-right:0}.checkout-grid{grid-template-columns:1fr}.pay-options{grid-template-columns:1fr}.footer{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="top">
-  <div>Welcome to <strong>ZEE-MART</strong> — Mega Shopping Store | 💵 Cash on Delivery Available</div>
+  <div>Welcome to <strong>ZEE-MART</strong> — Peshawar Online Mega Shopping Store | 💵 Cash on Delivery Available</div>
   <div class="toplinks">
     <span onclick="openModal('trackModal')">🔑 Track Order</span>
     <span>☎️ Customer Care: +92 333 6987944 | +92 311 9426089</span>
@@ -50,11 +51,11 @@
 <div class="header-actions"><div class="hact" onclick="openModal('loginModal')"><i class="fa-regular fa-user"></i><span>Login /<br><b>Register</b></span></div><div class="hact" onclick="openCart()"><i class="fa-solid fa-cart-shopping"></i><span>Cart <em id="cartCount" class="badge">0</em></span></div></div>
 </header>
 <nav class="nav"><div class="catmenu"><i class="fa-solid fa-bars"></i> &nbsp; All Categories</div><div class="navlinks"><a class="active" href="#">Home</a><a href="#products">Electronics</a><a href="#products">Fashion</a><a href="#products">Home & Kitchen</a><a href="#products">Beauty & Health</a><a href="#products">Baby & Kids</a><a href="#products">Sports</a><a href="#products">Books & Stationery</a><a class="green" href="#products">% Deals</a></div></nav>
-<section class="hero"><div><div class="green" style="font-weight:900;margin-bottom:13px">BIG SALE</div><h2><span>Mega</span> Shopping<br>Mega Savings</h2><p>Best Quality Products at Best Prices. Discover electronics, grocery, fashion, hardware and much more — only on ZEE-MART.</p><button class="btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now &nbsp; →</button></div><div class="hero-cart"><div class="circle"></div><i class="fa-solid fa-cart-shopping"></i></div></section>
+<section class="hero"><div><div class="green" style="font-weight:900;margin-bottom:13px">BIG SALE</div><h2><span>Mega</span> Shopping<br>Mega Savings</h2><p>Best Quality Products at Best Prices in Peshawar. Free delivery up to 10 KM!</p><button class="btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now &nbsp; →</button></div><div class="hero-cart"><div class="circle"></div><i class="fa-solid fa-cart-shopping"></i></div></section>
 <div class="trust">
-  <div><i class="fa-solid fa-hand-holding-dollar"></i><span><b>Cash on Delivery</b>COD Available All Over Pakistan</span></div>
-  <div><i class="fa-solid fa-truck"></i><span><b>Standard Delivery</b>Delivery Charges: PKR 300</span></div>
-  <div><i class="fa-solid fa-route"></i><span><b>Auto Tracking ID</b>Automatic Tracking ID Generation</span></div>
+  <div><i class="fa-solid fa-hand-holding-dollar"></i><span><b>Cash on Delivery</b>COD Available in Peshawar</span></div>
+  <div><i class="fa-solid fa-truck"></i><span><b>Peshawar Delivery</b>Free Upto 10 KM | +PKR 30/km after</span></div>
+  <div><i class="fa-solid fa-route"></i><span><b>Auto Tracking ID</b>Instant Order Tracking</span></div>
   <div><i class="fa-solid fa-box-open"></i><span><b>Easy Returns</b>7 Days Return Policy</span></div>
   <div><i class="fa-solid fa-headset"></i><span><b>Support</b>+92 333 6987944</span></div>
 </div>
@@ -62,19 +63,42 @@
 <div class="category" onclick="filter('electronics')"><i class="fa-solid fa-mobile-screen-button"></i><b>Electronics</b></div><div class="category" onclick="filter('gents')"><i class="fa-solid fa-shirt"></i><b>Fashion</b></div><div class="category" onclick="filter('hardware')"><i class="fa-solid fa-screwdriver-wrench"></i><b>Home & Kitchen</b></div><div class="category" onclick="filter('ladies')"><i class="fa-solid fa-wand-magic-sparkles"></i><b>Beauty & Health</b></div><div class="category" onclick="filter('kids')"><i class="fa-solid fa-baby"></i><b>Baby & Kids</b></div><div class="category" onclick="filter('shoes')"><i class="fa-solid fa-shoe-prints"></i><b>Sports & Footwear</b></div><div class="category" onclick="filter('grocery')"><i class="fa-solid fa-basket-shopping"></i><b>Grocery</b></div>
 </div></section>
 <section class="section" id="products"><div class="section-head"><h2>Featured <span>Products</span></h2><span id="count" style="font-size:12px;color:#778277"></span></div><div class="products" id="productGrid"></div></section>
-<footer class="footer"><div><div class="logo"><div class="logo-mark">Z</div><div><h1><span class="green">ZEE-</span>MART</h1><small>ONLINE MEGA SHOPPING STORE</small></div></div><p style="margin-top:15px">Your one-stop online mega shopping store for quality products and convenient delivery.</p><p style="margin-top:8px"><strong>Customer Care:</strong><br>+92 333 6987944<br>+92 311 9426089</p></div><div><h3>Customer Care</h3><a href="#">Help Center</a><a href="javascript:void(0)" onclick="openModal('trackModal')">Track Order</a><a href="#">Returns & Refunds</a><a href="#">Contact Us</a></div><div><h3>Quick Links</h3><a href="#products">Electronics</a><a href="#products">Fashion</a><a href="#products">Grocery</a><a href="#products">Hardware</a></div><div><h3>Payment & Delivery</h3><p>💵 Cash on Delivery Available</p><p>🚚 Delivery Charges: PKR 300</p><p>🔑 Auto Tracking ID Provided</p></div></footer>
 
-<div class="overlay" id="cartModal"><div class="modal"><div class="modal-head"><h2>🛒 Your Cart</h2><button class="close" onclick="closeModal('cartModal')">&times;</button></div><div id="cartItems"></div><div class="cart-total"><div style="display:flex;justify-content:space-between"><b>Subtotal</b><b id="cartTotal">PKR 0</b></div><div style="display:flex;justify-content:space-between;margin-top:7px;font-size:12px"><span>Delivery Charges</span><span id="cartDelivery">PKR 300</span></div></div><button class="btn" style="width:100%;margin-top:12px" onclick="openCheckout()">Proceed to Checkout</button></div></div>
+<footer class="footer"><div><div class="logo"><div class="logo-mark">Z</div><div><h1><span class="green">ZEE-</span>MART</h1><small>ONLINE MEGA SHOPPING STORE</small></div></div><p style="margin-top:15px">Your one-stop online mega shopping store for quality products and convenient delivery in Peshawar.</p><p style="margin-top:8px"><strong>Customer Care:</strong><br>+92 333 6987944<br>+92 311 9426089</p></div><div><h3>Customer Care</h3><a href="#">Help Center</a><a href="javascript:void(0)" onclick="openModal('trackModal')">Track Order</a><a href="#">Returns & Refunds</a><a href="#">Contact Us</a></div><div><h3>Quick Links</h3><a href="#products">Electronics</a><a href="#products">Fashion</a><a href="#products">Grocery</a><a href="#products">Hardware</a></div><div><h3>Payment & Delivery</h3><p>💵 Cash on Delivery Available</p><p>🚚 Free Upto 10 KM in Peshawar</p><p>🔑 Auto Invoice & Tracking</p></div></footer>
 
-<div class="overlay" id="checkoutModal"><div class="modal"><div class="modal-head"><h2>Secure Checkout</h2><button class="close" closeModal('checkoutModal')">&times;</button></div><div class="notice"><b>Order Info:</b> Order complete hone par aap ki automatic Tracking ID generate ho jaye gi jis se aap apna order track kar saken gey. Delivery Charges: PKR 300.</div><div class="checkout-grid"><div><div class="field"><label>Full Name</label><input id="cName"></div><div class="field"><label>Mobile / WhatsApp</label><input id="cPhone"></div><div class="field"><label>Delivery Address</label><textarea id="cAddress" rows="4"></textarea></div></div><div><label style="font-size:12px;font-weight:800">Payment Method</label><div class="pay-options"><div class="pay-option active" data-pay="cod" onclick="choosePay(this)">COD<br><small>Cash on Delivery</small></div><div class="pay-option" data-pay="bank" onclick="choosePay(this)">BANK<br><small>Bank Transfer</small></div><div class="pay-option" data-pay="card" onclick="choosePay(this)">CARD<br><small>Gateway Payment</small></div></div><div id="paymentArea"></div><div class="field"><label>Order Total (Including PKR 300 Delivery)</label><input id="checkoutTotal" readonly></div></div></div><button class="btn" style="width:100%" onclick="placeOrder()">Confirm Order</button></div></div>
+<!-- Cart Modal -->
+<div class="overlay" id="cartModal"><div class="modal"><div class="modal-head"><h2>🛒 Your Cart</h2><button class="close" onclick="closeModal('cartModal')">&times;</button></div><div id="cartItems"></div><div class="cart-total"><div style="display:flex;justify-content:space-between"><b>Subtotal</b><b id="cartTotal">PKR 0</b></div></div><button class="btn" style="width:100%;margin-top:12px" onclick="openCheckout()">Proceed to Checkout</button></div></div>
 
-<!-- Tracking Modal -->
-<div class="overlay" id="trackModal"><div class="modal" style="max-width:500px"><div class="modal-head"><h2>📦 Track Your Order</h2><button class="close" onclick="closeModal('trackModal')">&times;</button></div><div class="field"><label>Enter Tracking ID / Order ID</label><input id="trackInput" placeholder="e.g. ZM-TRK-1712345678"></div><button class="btn" style="width:100%" onclick="trackOrder()">Track Order</button><div id="trackResult"></div></div></div>
+<!-- Checkout Modal -->
+<div class="overlay" id="checkoutModal"><div class="modal"><div class="modal-head"><h2>Checkout & Auto Invoice</h2><button class="close" onclick="closeModal('checkoutModal')">&times;</button></div><div class="notice"><b>Peshawar Special Offer:</b> Peshawar me 10 KM tak Free Home Delivery hai. 10 KM ke baad har extra KM par PKR 30 charge honge.</div>
+<div class="checkout-grid">
+  <div>
+    <div class="field"><label>Full Name</label><input id="cName" placeholder="Enter full name"></div>
+    <div class="field"><label>Mobile / WhatsApp</label><input id="cPhone" placeholder="03XXXXXXXXX"></div>
+    <div class="field"><label>Delivery Distance in Peshawar (KM)</label><input id="cDistance" type="number" value="8" oninput="calculateDelivery()" placeholder="e.g. 12"></div>
+    <div class="field"><label>Delivery Address (Peshawar)</label><textarea id="cAddress" rows="3" placeholder="Complete address in Peshawar"></textarea></div>
+  </div>
+  <div>
+    <label style="font-size:12px;font-weight:800">Payment Method</label>
+    <div class="pay-options"><div class="pay-option active" data-pay="cod" onclick="choosePay(this)">COD<br><small>Cash on Delivery</small></div><div class="pay-option" data-pay="bank" onclick="choosePay(this)">BANK<br><small>Bank Transfer</small></div></div>
+    <div class="field"><label>Delivery Charges</label><input id="cDeliveryCharges" value="PKR 0" readonly></div>
+    <div class="field"><label>Total Bill Amount</label><input id="checkoutTotal" readonly></div>
+  </div>
+</div>
+<button class="btn" style="width:100%" onclick="placeOrder()">Confirm & Send Order Direct to WhatsApp</button>
+</div></div>
 
-<div class="overlay" id="loginModal"><div class="modal" style="max-width:430px"><div class="modal-head"><h2>Login / Register</h2><button class="close" onclick="closeModal('loginModal')">&times;</button></div><button class="google-btn" onclick="googleLogin()"><i class="fa-brands fa-google"></i> Continue with Google</button><div style="text-align:center;margin:15px;color:#899389;font-size:12px">or use your email</div><div class="field"><label>Email</label><input id="loginEmail" type="email" placeholder="you@example.com"></div><div class="field"><label>Password</label><input id="loginPassword" type="password"></div><button class="btn" style="width:100%" onclick="demoLogin()">Continue</button><p style="font-size:10px;color:#7d877d;margin-top:12px">Google sign-in requires a Google OAuth Client ID and server-side token verification.</p></div></div>
+<!-- Invoice Output Modal -->
+<div class="overlay" id="invoiceModal"><div class="modal" style="max-width:600px"><div class="modal-head"><h2>📄 Order Invoice</h2><button class="close" onclick="closeModal('invoiceModal')">&times;</button></div><div id="invoiceContent"></div><button class="btn" style="width:100%;margin-top:15px;" onclick="window.print()">Print / Download Invoice</button></div></div>
+
+<!-- Track Modal -->
+<div class="overlay" id="trackModal"><div class="modal" style="max-width:500px"><div class="modal-head"><h2>📦 Track Your Order</h2><button class="close" onclick="closeModal('trackModal')">&times;</button></div><div class="field"><label>Enter Tracking ID</label><input id="trackInput" placeholder="e.g. ZM-TRK-123456"></div><button class="btn" style="width:100%" onclick="trackOrder()">Track Order</button><div id="trackResult"></div></div></div>
+
+<div class="overlay" id="loginModal"><div class="modal" style="max-width:430px"><div class="modal-head"><h2>Login / Register</h2><button class="close" onclick="closeModal('loginModal')">&times;</button></div><button class="google-btn" onclick="googleLogin()"><i class="fa-brands fa-google"></i> Continue with Google</button><div style="text-align:center;margin:15px;color:#899389;font-size:12px">or use your email</div><div class="field"><label>Email</label><input id="loginEmail" type="email" placeholder="you@example.com"></div><div class="field"><label>Password</label><input id="loginPassword" type="password"></div><button class="btn" style="width:100%" onclick="demoLogin()">Continue</button></div></div>
 
 <script>
-const STORE={name:"ZEE-MART",currency:"PKR",delivery:300};
+const MERCHANT_WHATSAPP = "923336987944"; // Aap ka WhatsApp Number
+const STORE={name:"ZEE-MART",currency:"PKR"};
 const RAW={
   grocery:["Aam Papad","Aata","Almonds","Anardana","Apple Jam","Basmati Rice","Black Tea","Bread","Butter","Chicken Nuggets","Chocolate","Coffee","Eggs","Honey","Milk","Olive Oil","Red Chili Powder","Sugar","Yogurt"],
   hardware:["Allen Key Set","Anchor Bolt","Bearing","Cable Tie","Drill Machine","Hammer","Hand Saw","Pliers","Screwdriver","Toolbox","Wrench","Safety Helmet","Duct Tape","Grinder"],
@@ -85,12 +109,15 @@ const RAW={
   shoes:["Men Formal Shoes","Men Sports Shoes","Men Joggers","Men Sneakers","Men Peshawari Chappal","Ladies Heels","Ladies Sandals","Ladies Khussa","Baby Shoes","Kids School Shoes"]
 };
 const MARKET={'Aam Papad': 350, 'Aata': 2200, 'Almonds': 3200, 'Anardana': 1200, 'Apple Jam': 650, 'Basmati Rice': 420, 'Black Tea': 1200, 'Bread': 180, 'Butter': 750, 'Chicken Nuggets': 1100, 'Chocolate': 450, 'Coffee': 1600, 'Eggs': 300, 'Honey': 1400, 'Milk': 250, 'Olive Oil': 2800, 'Red Chili Powder': 450, 'Sugar': 190, 'Yogurt': 280, 'Allen Key Set': 650, 'Anchor Bolt': 120, 'Bearing': 850, 'Cable Tie': 250, 'Drill Machine': 8500, 'Hammer': 1200, 'Hand Saw': 1100, 'Pliers': 900, 'Screwdriver': 650, 'Toolbox': 3500, 'Wrench': 1100, 'Safety Helmet': 700, 'Duct Tape': 300, 'Grinder': 9500, 'LED Bulb': 450, 'Ceiling Fan': 7500, 'Extension Board': 1200, 'Mobile Charger': 1200, 'Fast Charger': 1800, 'USB Cable': 600, 'Bluetooth Speaker': 2500, 'Earphones': 900, 'Smart TV Stick': 5500, 'CCTV Camera': 4500, 'Wi-Fi Router': 4500, 'Electric Kettle': 3500, 'Men T-Shirt': 1400, 'Polo Shirt': 2200, 'Formal Shirt': 3000, 'Men Jeans': 3200, 'Cargo Pants': 2800, 'Shalwar Kameez': 6000, 'Kurta': 3500, 'Blazer': 8500, 'Jacket': 5500, 'Sweater': 3000, 'Hoodie': 3200, 'Sports Socks': 500, 'Ladies Kurti': 3000, 'Three Piece Suit': 5500, 'Lawn Suit': 5000, 'Maxi Dress': 6000, 'Ladies Jeans': 3200, 'Abaya': 4500, 'Dupatta': 1800, 'Ladies Jacket': 4500, 'Ladies Handbag': 3500, 'Baby Bodysuit': 1200, 'Baby Romper': 1500, 'Baby Frock': 2200, 'Baby Sweater': 1800, 'Kids Jeans': 2200, 'Kids T-Shirt': 1200, 'Kids Jacket': 3000, 'School Uniform Shirt': 1100, 'Kids Toys': 1800, 'Men Formal Shoes': 6500, 'Men Sports Shoes': 4500, 'Men Joggers': 4200, 'Men Sneakers': 5000, 'Men Peshawari Chappal': 3500, 'Ladies Heels': 4500, 'Ladies Sandals': 2500, 'Ladies Khussa': 3000, 'Baby Shoes': 1400, 'Kids School Shoes': 2200};
-let products=[],cart=[],currentFilter="all",payMethod="cod";
+let products=[],cart=[],currentFilter="all",payMethod="cod",deliveryCharges=0;
+
 function money(n){return STORE.currency+" "+Math.round(n||0).toLocaleString("en-PK")}
 function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
 function imgFor(name){return "https://image.pollinations.ai/prompt/"+encodeURIComponent("professional ecommerce product photo of "+name+", clean white studio background, no text")+"?width=500&height=400&nologo=true&seed="+encodeURIComponent(name)}
 function iconFor(cat){return cat==="electronics"?"fa-mobile-screen-button":cat==="hardware"?"fa-screwdriver-wrench":cat==="gents"||cat==="ladies"?"fa-shirt":cat==="kids"?"fa-baby":cat==="shoes"?"fa-shoe-prints":"fa-basket-shopping"}
+
 Object.keys(RAW).forEach(cat=>RAW[cat].forEach((name,i)=>{const cost=Number(MARKET[name]||1000),marked=cost*1.25,final=marked*.90;products.push({id:cat+"_"+i,name,category:cat,price:Math.round(final),old:Math.round(marked),img:imgFor(name)})}));
+
 function filter(cat){currentFilter=cat;document.getElementById("products").scrollIntoView({behavior:"smooth"});render()}
 function render(){const q=document.getElementById("search").value.toLowerCase().trim(),grid=document.getElementById("productGrid");const arr=products.filter(p=>(currentFilter==="all"||p.category===currentFilter)&&(!q||p.name.toLowerCase().includes(q)));document.getElementById("count").textContent=arr.length+" products";grid.innerHTML=arr.map(p=>`<article class="product"><span class="discount">10% OFF</span><div class="product-img"><img src="${esc(p.img)}" alt="${esc(p.name)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i style="display:none" class="fa-solid ${iconFor(p.category)}"></i></div><div class="pcat">${esc(p.category)}</div><div class="pname">${esc(p.name)}</div><div class="rating">★★★★★ <span style="color:#8a9589">(4.8)</span></div><div class="price"><span class="old">${money(p.old)}</span>${money(p.price)}</div><button class="add" onclick="addToCart('${p.id}')"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button></article>`).join("")||'<div class="empty" style="grid-column:1/-1">No products found.</div>'}
 function addToCart(id){const p=products.find(x=>x.id===id);if(!p)return;const x=cart.find(x=>x.id===id);x?x.qty++:cart.push({...p,qty:1});updateCart();openCart()}
@@ -98,56 +125,130 @@ function updateCart(){document.getElementById("cartCount").textContent=cart.redu
 function openCart(){renderCart();openModal("cartModal")}
 function renderCart(){const box=document.getElementById("cartItems");if(!cart.length){box.innerHTML='<div class="empty">Your cart is empty.</div>';return}box.innerHTML=cart.map(x=>`<div class="cart-row"><div class="cart-thumb"><i class="fa-solid ${iconFor(x.category)}"></i></div><div><b>${esc(x.name)}</b><div class="qty"><button onclick="changeQty('${x.id}',-1)">−</button><span>${x.qty}</span><button onclick="changeQty('${x.id}',1)">+</button></div></div><b>${money(x.price*x.qty)}</b></div>`).join("")}
 function changeQty(id,n){const x=cart.find(x=>x.id===id);if(!x)return;x.qty+=n;if(x.qty<=0)cart=cart.filter(x=>x.id!==id);updateCart();renderCart()}
-function openCheckout(){if(!cart.length){alert("Please add a product first.");return}closeModal("cartModal");document.getElementById("checkoutTotal").value=money(cart.reduce((a,x)=>a+x.price*x.qty,0)+STORE.delivery);openModal("checkoutModal");choosePay(document.querySelector('.pay-option[data-pay="cod"]'))}
-function choosePay(el){document.querySelectorAll(".pay-option").forEach(x=>x.classList.remove("active"));el.classList.add("active");payMethod=el.dataset.pay;const area=document.getElementById("paymentArea");if(payMethod==="cod")area.innerHTML='<div class="notice">Cash will be collected when your order is delivered.</div>';if(payMethod==="bank")area.innerHTML='<div class="notice"><b>Bank Transfer:</b> Put your business bank details here. Your server should verify the transaction before marking an order paid.</div>';if(payMethod==="card")area.innerHTML='<div class="notice"><b>Card:</b> Use hosted fields/checkout from your payment gateway. Do not collect raw card numbers in this page.</div><button class="google-btn" onclick="startCardGateway()">Open Secure Card Checkout</button>'}
-function startCardGateway(){alert("Payment gateway connection is not configured yet. Add your gateway public key and server endpoint first.")}
+
+// Peshawar Distance Logic
+function calculateDelivery(){
+  const dist = parseFloat(document.getElementById("cDistance").value) || 0;
+  if(dist <= 10){
+    deliveryCharges = 0; // Free for 10 KM in Peshawar
+  } else {
+    const extraKm = dist - 10;
+    deliveryCharges = extraKm * 30; // PKR 30 per extra KM
+  }
+  document.getElementById("cDeliveryCharges").value = money(deliveryCharges);
+  const subtotal = cart.reduce((a,x)=>a+x.price*x.qty,0);
+  document.getElementById("checkoutTotal").value = money(subtotal + deliveryCharges);
+}
+
+function openCheckout(){
+  if(!cart.length){alert("Please add a product first.");return}
+  closeModal("cartModal");
+  calculateDelivery();
+  openModal("checkoutModal");
+}
+
+function choosePay(el){
+  document.querySelectorAll(".pay-option").forEach(x=>x.classList.remove("active"));
+  el.classList.add("active");
+  payMethod=el.dataset.pay;
+}
+
 function placeOrder(){
-  const name=document.getElementById("cName").value.trim(),phone=document.getElementById("cPhone").value.trim(),address=document.getElementById("cAddress").value.trim();
-  if(!name||!phone||!address){alert("Please complete your delivery details.");return}
-  if(payMethod==="card"){startCardGateway();return}
-  
+  const name=document.getElementById("cName").value.trim(), phone=document.getElementById("cPhone").value.trim(), address=document.getElementById("cAddress").value.trim(), dist=document.getElementById("cDistance").value;
+  if(!name||!phone||!address){alert("Please complete delivery details.");return}
+
   const trackingId = "ZM-TRK-" + Math.floor(100000 + Math.random() * 900000);
-  const order={id:"ZM-"+Date.now(),trackingId,date:new Date().toLocaleString("en-PK"),customer:{name,phone,address},payment:payMethod,items:cart.map(x=>({name:x.name,qty:x.qty,price:x.price})),total:cart.reduce((a,x)=>a+x.price*x.qty,0)+STORE.delivery,status:"Processing"};
+  const subtotal = cart.reduce((a,x)=>a+x.price*x.qty,0);
+  const total = subtotal + deliveryCharges;
   
+  const order={id:"ZM-"+Date.now(),trackingId,date:new Date().toLocaleString("en-PK"),customer:{name,phone,address,dist},payment:payMethod,items:[...cart],subtotal,deliveryCharges,total,status:"Processing"};
+
   const orders=JSON.parse(localStorage.getItem("zeemart_orders_v2")||"[]");
   orders.unshift(order);
   localStorage.setItem("zeemart_orders_v2",JSON.stringify(orders));
-  
-  alert("Order Placed Successfully!\n\nOrder ID: "+order.id+"\nYour Tracking ID: "+trackingId+"\n\nAap is Tracking ID se apna order track kar sakte hain.");
+
+  // WhatsApp Alert Text
+  let itemDetails = cart.map((x,i)=>`${i+1}. ${x.name} x ${x.qty} = PKR ${x.price*x.qty}`).join('%0A');
+  let waText = `🛒 *NEW PESHAWAR ORDER RECEIVED - ZEE-MART*%0A%0A`+
+               `*Tracking ID:* ${trackingId}%0A`+
+               `*Customer Name:* ${name}%0A`+
+               `*Phone:* ${phone}%0A`+
+               `*City:* Peshawar%0A`+
+               `*Address:* ${address}%0A`+
+               `*Distance:* ${dist} KM%0A%0A`+
+               `📦 *Items:*%0A${itemDetails}%0A%0A`+
+               `*Subtotal:* PKR ${subtotal}%0A`+
+               `*Delivery Charges:* PKR ${deliveryCharges}%0A`+
+               `💰 *TOTAL BILL:* PKR ${total}%0A`+
+               `*Payment Method:* ${payMethod.toUpperCase()}`;
+
+  generateInvoice(order);
   cart=[];
   updateCart();
   closeModal("checkoutModal");
+
+  window.open(`https://wa.me/${MERCHANT_WHATSAPP}?text=${waText}`, '_blank');
+}
+
+function generateInvoice(o){
+  const box = document.getElementById("invoiceContent");
+  box.innerHTML = `
+    <div class="invoice-box">
+      <div class="invoice-header">
+        <div>
+          <h2>ZEE-MART</h2>
+          <small>Peshawar Store Invoice</small>
+        </div>
+        <div style="text-align:right">
+          <b>INVOICE</b><br>
+          <small>Date: ${o.date}</small><br>
+          <small>Tracking ID: <b>${o.trackingId}</b></small>
+        </div>
+      </div>
+      <div>
+        <b>Customer Details:</b><br>
+        Name: ${esc(o.customer.name)}<br>
+        Phone: ${esc(o.customer.phone)}<br>
+        City: Peshawar<br>
+        Address: ${esc(o.customer.address)} (${o.customer.dist} KM)
+      </div>
+      <table class="invoice-table">
+        <thead><tr><th>Item</th><th>Qty</th><th>Price</th><th>Total</th></tr></thead>
+        <tbody>
+          ${o.items.map(i=>`<tr><td>${esc(i.name)}</td><td>${i.qty}</td><td>${money(i.price)}</td><td>${money(i.price*i.qty)}</td></tr>`).join('')}
+        </tbody>
+      </table>
+      <div style="text-align:right;font-size:12px">
+        Subtotal: ${money(o.subtotal)}<br>
+        Delivery Charges: ${money(o.deliveryCharges)}<br>
+        <h3 style="color:#178000;margin-top:5px">Total Bill: ${money(o.total)}</h3>
+      </div>
+    </div>
+  `;
+  openModal("invoiceModal");
 }
 
 function trackOrder(){
   const id=document.getElementById("trackInput").value.trim().toUpperCase();
   const box=document.getElementById("trackResult");
-  if(!id){box.innerHTML='<div class="empty">Please enter a Tracking ID or Order ID.</div>';return}
-  
+  if(!id){box.innerHTML='<div class="empty">Please enter Tracking ID.</div>';return}
   const orders=JSON.parse(localStorage.getItem("zeemart_orders_v2")||"[]");
   const found=orders.find(o=>o.id.toUpperCase()===id||o.trackingId.toUpperCase()===id);
-  
-  if(!found){
-    box.innerHTML='<div class="empty">No order found with ID: <b>'+esc(id)+'</b></div>';
-    return;
-  }
-  
-  box.innerHTML=`
-    <div class="tracking-card">
-      <span class="tracking-status">${esc(found.status)}</span>
-      <div style="font-size:13px;margin-bottom:5px"><b>Tracking ID:</b> ${esc(found.trackingId)}</div>
-      <div style="font-size:12px;color:#555;margin-bottom:5px"><b>Order ID:</b> ${esc(found.id)}</div>
-      <div style="font-size:12px;color:#555;margin-bottom:5px"><b>Customer:</b> ${esc(found.customer.name)} (${esc(found.customer.phone)})</div>
-      <div style="font-size:12px;color:#555;margin-bottom:5px"><b>Date:</b> ${esc(found.date)}</div>
-      <div style="font-size:12px;color:#555;margin-bottom:5px"><b>Total:</b> ${money(found.total)} (${esc(found.payment).toUpperCase()})</div>
-    </div>
-  `;
+  if(!found){box.innerHTML='<div class="empty">No order found.</div>';return}
+  box.innerHTML=`<div style="background:#f0faeb;padding:15px;border-radius:8px;margin-top:10px">
+    <b>Status:</b> ${found.status}<br>
+    <b>Tracking ID:</b> ${found.trackingId}<br>
+    <b>Customer:</b> ${esc(found.customer.name)}<br>
+    <b>Total:</b> ${money(found.total)}
+  </div>`;
 }
 
-function googleLogin(){alert("Google Login needs your Google OAuth Client ID and server-side token verification.")}
-function demoLogin(){alert("For a real account system, connect this form to your secure backend/auth service.")}
+function googleLogin(){alert("Google Login needs OAuth Client ID.")}
+function demoLogin(){alert("Backend required for user authentication.")}
 function openModal(id){document.getElementById(id).style.display="flex"}
 function closeModal(id){document.getElementById(id).style.display="none"}
-document.querySelectorAll(".overlay").forEach(x=>x.addEventListener("click",e=>{if(e.target===x)x.style.display="none"}));document.getElementById("search").addEventListener("input",render);render();updateCart();
+document.querySelectorAll(".overlay").forEach(x=>x.addEventListener("click",e=>{if(e.target===x)x.style.display="none"}));
+document.getElementById("search").addEventListener("input",render);
+render();updateCart();
 </script>
 </body></html>
